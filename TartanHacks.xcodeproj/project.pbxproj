@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB0B67D01A857FAB00156759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67CF1A857FAB00156759 /* main.m */; };
 		EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67D21A857FAB00156759 /* AppDelegate.m */; };
-		EB0B67D61A857FAB00156759 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67D51A857FAB00156759 /* ViewController.m */; };
-		EB0B67D91A857FAB00156759 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67D71A857FAB00156759 /* Main.storyboard */; };
 		EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67DA1A857FAB00156759 /* Images.xcassets */; };
-		EB0B67DE1A857FAB00156759 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67DC1A857FAB00156759 /* LaunchScreen.xib */; };
 		EB0B67EA1A857FAC00156759 /* TartanHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67E91A857FAC00156759 /* TartanHacksTests.m */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +29,7 @@
 		EB0B67CF1A857FAB00156759 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB0B67D11A857FAB00156759 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EB0B67D21A857FAB00156759 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EB0B67D41A857FAB00156759 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EB0B67D51A857FAB00156759 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		EB0B67D81A857FAB00156759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB0B67DA1A857FAB00156759 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EB0B67DD1A857FAB00156759 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EB0B67E31A857FAC00156759 /* TartanHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TartanHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0B67E81A857FAC00156759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0B67E91A857FAC00156759 /* TartanHacksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TartanHacksTests.m; sourceTree = "<group>"; };
@@ -83,11 +76,7 @@
 			children = (
 				EB0B67D11A857FAB00156759 /* AppDelegate.h */,
 				EB0B67D21A857FAB00156759 /* AppDelegate.m */,
-				EB0B67D41A857FAB00156759 /* ViewController.h */,
-				EB0B67D51A857FAB00156759 /* ViewController.m */,
-				EB0B67D71A857FAB00156759 /* Main.storyboard */,
 				EB0B67DA1A857FAB00156759 /* Images.xcassets */,
-				EB0B67DC1A857FAB00156759 /* LaunchScreen.xib */,
 				EB0B67CD1A857FAB00156759 /* Supporting Files */,
 			);
 			path = TartanHacks;
@@ -199,8 +188,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0B67D91A857FAB00156759 /* Main.storyboard in Resources */,
-				EB0B67DE1A857FAB00156759 /* LaunchScreen.xib in Resources */,
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB0B67D61A857FAB00156759 /* ViewController.m in Sources */,
 				EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
 			);
@@ -242,25 +228,6 @@
 			targetProxy = EB0B67E41A857FAC00156759 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EB0B67D71A857FAB00156759 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB0B67D81A857FAB00156759 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EB0B67DC1A857FAB00156759 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB0B67DD1A857FAB00156759 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EB0B67EB1A857FAC00156759 /* Debug */ = {
@@ -412,6 +379,7 @@
 				EB0B67EF1A857FAC00156759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EB0B67F01A857FAC00156759 /* Build configuration list for PBXNativeTarget "TartanHacksTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +388,7 @@
 				EB0B67F21A857FAC00156759 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
