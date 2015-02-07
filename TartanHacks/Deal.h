@@ -23,4 +23,5 @@
 @property (retain) NSString *storeName;
 @property (retain) NSString *itemName;
 @property (retain) NSString *descript;
+@property (retain) PFFile *imageData;
 @end

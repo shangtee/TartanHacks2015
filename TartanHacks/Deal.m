@@ -30,6 +30,7 @@
 @dynamic storeName;
 @dynamic itemName;
 @dynamic descript;
+@dynamic imageData;
 
 
 

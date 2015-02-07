@@ -19,7 +19,7 @@
 +(instancetype)sharedCenter;
 -(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate;
 -(void) fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate;
--(void) addDealParticipant: (Deal *)deal;
+-(void) addDealParticipant: (Deal *)deal numItems: (NSInteger)num;
 -(void) updateRadius: (int)radius;
 @end
 
