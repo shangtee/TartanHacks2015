@@ -71,6 +71,8 @@
     self.deal[@"dealLocation"] = currentLoc;
     self.deal[@"active"] = @YES;
     [self.deal saveInBackground];
+    
+    self.tabBarController.selectedIndex = 0;
 }
 
 - (void)didReceiveMemoryWarning {
