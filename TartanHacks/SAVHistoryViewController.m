@@ -7,8 +7,13 @@
 //
 
 #import "SAVHistoryViewController.h"
+#import "SAVHistoryTableViewCell.h"
+#import "DataCenter.h"
+#import "Deal.h"
 
-@interface SAVHistoryViewController ()
+@interface SAVHistoryViewController ()<SAVMainDealDelegate>
+
+@property NSMutableArray *dealList;
 
 @end
 
@@ -16,12 +21,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dealList = [NSMutableArray array];
+    UINib *nib = [UINib nibWithNibName:@"SAVHistoryTableViewCell" bundle:nil];
+    // Register this NIB, which contains the cell
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:@"SAVHistoryTableViewCell"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)dealDataFetched:(NSMutableArray *)data{
+    self.dealList = data;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,20 +53,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.dealList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
     // Configure the cell...
-    
+    SAVHistoryTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SAVHistoryTableViewCell" forIndexPath:indexPath];
+    Deal *curDeal = self.dealList[indexPath.row];
+    cell.storeLabel.text = curDeal.storeName;
+    cell.itemLabel.text = curDeal.itemName;
+    cell.descriptionLabel.text = curDeal.description;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    dateFormatter.dateStyle = NSDateFormatterShortStyle;
+    NSString *dateString = [dateFormatter stringFromDate:curDeal.dealExpirationTime];
+    cell.dateLabel.text = dateString;
+
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

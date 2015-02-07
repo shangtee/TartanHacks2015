@@ -38,6 +38,8 @@
 		F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */; };
 		F5A4D21C1A85BEAB00FC353F /* SAVFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */; };
 		F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */; };
+		F5A4D2261A85D6CC00FC353F /* SAVHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */; };
+		F5A4D2271A85D6CC00FC353F /* SAVHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		F5A4D2191A85BEAB00FC353F /* SAVFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedTableViewCell.h; sourceTree = "<group>"; };
 		F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedTableViewCell.m; sourceTree = "<group>"; };
 		F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedTableViewCell.xib; sourceTree = "<group>"; };
+		F5A4D2231A85D6CC00FC353F /* SAVHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVHistoryTableViewCell.h; sourceTree = "<group>"; };
+		F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVHistoryTableViewCell.m; sourceTree = "<group>"; };
+		F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVHistoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +238,9 @@
 				F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */,
 				F5A4D20E1A85BCFE00FC353F /* SAVFeedViewController.h */,
 				F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */,
+				F5A4D2231A85D6CC00FC353F /* SAVHistoryTableViewCell.h */,
+				F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */,
+				F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */,
 				F5A4D2111A85BD0D00FC353F /* SAVHistoryViewController.h */,
 				F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */,
 				F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */,
@@ -330,6 +338,7 @@
 				EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */,
 				580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */,
 				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
+				F5A4D2271A85D6CC00FC353F /* SAVHistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +367,7 @@
 				F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
 				EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */,
+				F5A4D2261A85D6CC00FC353F /* SAVHistoryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
