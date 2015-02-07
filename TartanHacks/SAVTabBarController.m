@@ -30,16 +30,17 @@
                                        green:251.0f/255.0f
                                         blue:246.0f/255.0f
                                        alpha:1.0f];
+    UIColor *seafoam = [UIColor colorWithRed:149.0f/255.0f
+                                       green:214.0f/255.0f
+                                        blue:193.0f/255.0f
+                                       alpha:1.0f];
     
     SAVFeedViewController *feedViewController = [[SAVFeedViewController alloc] init];
     feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
     feedViewController.tabBarItem.title = @"Feed";
     feedViewController.title = @"Around You";
     UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedViewController];
-    feedNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
-                                                         green:214.0f/255.0f
-                                                          blue:193.0f/255.0f
-                                                         alpha:1.0f];
+    feedNav.navigationBar.barTintColor = seafoam;
     feedNav.navigationBar.tintColor = [UIColor whiteColor];
     [feedNav.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -55,10 +56,7 @@
     addViewController.tabBarItem.title = @"Add Deal";
     addViewController.title = @"Add Deal";
     UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addViewController];
-    addNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
-                                                        green:214.0f/255.0f
-                                                         blue:193.0f/255.0f
-                                                        alpha:1.0f];
+    addNav.navigationBar.barTintColor = seafoam;
     addNav.navigationBar.tintColor = [UIColor whiteColor];
     [addNav.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -75,10 +73,7 @@
     historyViewController.tabBarItem.title = @"Your Deals";
     historyViewController.title = @"Your Deals";
     UINavigationController *historyNav = [[UINavigationController alloc] initWithRootViewController:historyViewController];
-    historyNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
-                                                            green:214.0f/255.0f
-                                                             blue:193.0f/255.0f
-                                                            alpha:1.0f];
+    historyNav.navigationBar.barTintColor = seafoam;
     historyNav.navigationBar.tintColor = [UIColor whiteColor];
     [historyNav.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -88,7 +83,8 @@
       offWhite,NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Futura" size:18],
       NSFontAttributeName, nil]];
-
+    [self.tabBar setBarTintColor:seafoam];
+    [self.tabBar setTintColor: offWhite];
     self.viewControllers = [NSMutableArray arrayWithObjects:feedNav, addNav, historyNav, nil];
     self.historyvc = historyViewController;
     self.feedvc = feedViewController;
