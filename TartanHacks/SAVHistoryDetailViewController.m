@@ -7,8 +7,10 @@
 //
 
 #import "SAVHistoryDetailViewController.h"
+#import "DataCenter.h"
 
 @interface SAVHistoryDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (strong, nonatomic) Deal *curDeal;
 @end
 
@@ -23,6 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.storeLabel.text = self.curDeal.storeName;
+    self.itemLabel.text = self.curDeal.itemName;
+    self.descriptionLabel.text = self.curDeal.descript;
+    if (![(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId]) {
+        self.confirmButton.hidden = YES;
+        self.countLabel.hidden = YES;
+    } else {
+        self.confirmButton.hidden = NO;
+        NSNumber *countNum = [(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId];
+        self.countLabel.text = countNum.description;
+
+    }
+    
+}
+- (IBAction)confirmTouched:(UIButton *)sender {
+    [[DataCenter sharedCenter] removeDeal:self.curDeal];
+    sender.hidden = YES;
+    self.countLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

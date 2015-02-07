@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.radiusSlider.value = [(NSNumber *)([PFUser currentUser][@"searchRadius"]) floatValue];
+    self.sliderLabel.text = [NSString stringWithFormat:@"%d",(int)self.radiusSlider.value];
     [self.radiusSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -31,7 +33,7 @@
 
 -(void) viewWillDisappear:(BOOL)animated
 {
-    [self viewWillDisappear:animated];
+    [super viewWillDisappear:animated];
     [[DataCenter sharedCenter] updateRadius:(int)self.radiusSlider.value];
     
 }

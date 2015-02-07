@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAVHistoryDetailViewController">
             <connections>
+                <outlet property="confirmButton" destination="5sf-Al-fWu" id="gXD-pa-yZv"/>
                 <outlet property="countLabel" destination="MX8-mM-UBi" id="DzM-i8-HxL"/>
                 <outlet property="descriptionLabel" destination="eQY-Fv-LAE" id="KOC-Nt-aE0"/>
                 <outlet property="imageView" destination="0RO-1N-ZbG" id="Ueq-t2-OUp"/>
@@ -46,6 +47,15 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0RO-1N-ZbG">
                     <rect key="frame" x="72" y="175" width="269" height="214"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sf-Al-fWu">
+                    <rect key="frame" x="179" y="634" width="55" height="30"/>
+                    <state key="normal" title="Confirm">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="confirmTouched:" destination="-1" eventType="touchUpInside" id="jfZ-FI-K6R"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
