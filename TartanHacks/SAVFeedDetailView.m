@@ -32,7 +32,9 @@
 }
 
 -(void)viewDidLoad{
-    
+    [super viewDidLoad];
+}
+- (IBAction)participate:(id)sender {
 }
 
 @end
