@@ -20,4 +20,7 @@
 @property (retain) PFRelation *confirmedUsers;
 @property (retain) PFRelation *participants;
 @property (retain) PFUser *initiator;
+@property (retain) NSString *storeName;
+@property (retain) NSString *itemName;
+@property (retain) NSString *description;
 @end
