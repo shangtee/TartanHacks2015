@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580A14351A85D4CE00259209 /* SAVFeedDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A14341A85D4CE00259209 /* SAVFeedDetailView.m */; };
+		580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580A14361A85D62800259209 /* SAVFeedNib.xib */; };
 		583214351A85B29300CBBBA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */; };
 		583214361A85B29300CBBBA5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142B1A85B29300CBBBA5 /* CFNetwork.framework */; };
 		583214371A85B29300CBBBA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */; };
@@ -49,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580A14331A85D4CE00259209 /* SAVFeedDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedDetailView.h; sourceTree = "<group>"; };
+		580A14341A85D4CE00259209 /* SAVFeedDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedDetailView.m; sourceTree = "<group>"; };
+		580A14361A85D62800259209 /* SAVFeedNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedNib.xib; sourceTree = "<group>"; };
 		5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5832142B1A85B29300CBBBA5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -233,6 +238,9 @@
 				F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */,
 				F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */,
 				F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */,
+				580A14331A85D4CE00259209 /* SAVFeedDetailView.h */,
+				580A14341A85D4CE00259209 /* SAVFeedDetailView.m */,
+				580A14361A85D62800259209 /* SAVFeedNib.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -320,6 +328,7 @@
 				F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */,
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
 				EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */,
+				580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */,
 				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +349,7 @@
 			files = (
 				F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */,
 				583214521A85B44F00CBBBA5 /* Deal.m in Sources */,
+				580A14351A85D4CE00259209 /* SAVFeedDetailView.m in Sources */,
 				5832144E1A85B43000CBBBA5 /* DataCenter.m in Sources */,
 				F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */,
 				EB120B3F1A85CC3800A7318F /* SAVTabBarController.m in Sources */,
