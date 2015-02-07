@@ -10,8 +10,8 @@
 #import "SAVLoginViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface SAVFeedViewController ()
-
+@interface SAVFeedViewController () <SAVMainDealDelegate>
+@property NSMutableArray *dealList;
 @end
 
 @implementation SAVFeedViewController
@@ -32,6 +32,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)dealDataFetched:(NSMutableArray *)data{
+    self.dealList = data;
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,26 +53,50 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.dealList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    SAVFeedTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SAVFeedTableViewCell" forIndexPath:indexPath];
+    Deal *curDeal = self.dealList[indexPath.row];
+    cell.dealLabel.text = curDeal.storeName;
+    cell.itemLabel.text = curDeal.itemName;
+    cell.descriptionLabel.text = curDeal.description;
+    NSInteger interval = (NSInteger)[curDeal.dealExpirationTime timeIntervalSinceNow];
+    NSInteger seconds = interval % 60;
+    NSInteger minutes = (interval / 60) % 60;
+    NSInteger hours = interval / 3600;
+    cell.timeRemainingLabel.text = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds];
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    CLLocation *loc = [[CLLocation alloc] initWithLatitude:curDeal.dealLocation.latitude longitude:curDeal.dealLocation.longitude];
+    [geocoder reverseGeocodeLocation:loc completionHandler:^(NSArray *placemarks, NSError *error) {
+        // location services turned off for this app
+        if (error) {
+            
+        } else { // location services on for this app. make a closet object and set its FormattedAddressLinesField. enable using current city
+            CLPlacemark *placemark = [placemarks lastObject];
+            // only save the city of the current location.
+            NSMutableString *cityString = [[NSMutableString alloc] init];
+            if (placemark.addressDictionary[@"SubLocality"]) {
+                [cityString appendString:placemark.addressDictionary[@"SubLocality"]];
+                [cityString appendString:@" "];
+            }
+            [cityString appendString:placemark.addressDictionary[@"City"]];
+            [cityString appendString:@" "];
+            [cityString appendString:placemark.addressDictionary[@"State"]];
+            [cityString appendString:@" "];
+            [cityString appendString:placemark.addressDictionary[@"Country"]];
+            cell.proximityLabel.text = cityString;
+        }
+    }];
     // Configure the cell...
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.

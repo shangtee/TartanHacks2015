@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol SAVMainDealDelegate;
+
 @interface DataCenter : NSObject
 +(instancetype)sharedCenter;
+-(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate;
+@end
+
+@protocol SAVMainDealDelegate <NSObject>
+-(void)dealDataFetched: (NSMutableArray *)data;
 @end
