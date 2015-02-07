@@ -32,6 +32,7 @@
     self.storeLabel.text = self.curDeal.storeName;
     self.itemLabel.text = self.curDeal.itemName;
     self.descriptionLabel.text = self.curDeal.descript;
+    
     PFFile *imageFile = self.curDeal.image;
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
@@ -44,9 +45,11 @@
     [relationQuery whereKey:@"objectId" equalTo:[PFUser currentUser].objectId];
     [relationQuery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
         if (number > 0 || [PFUser currentUser].objectId == self.curDeal.initiator.objectId) {
-            self.confirmButton.hidden = YES;
+            self.confirmButton.enabled = NO;
+            [self.confirmButton setTitle:@"PURCHASED" forState:UIControlStateNormal];
         } else {
-            self.confirmButton.hidden = NO;
+            self.confirmButton.enabled = YES;
+            [self.confirmButton setTitle:@"CONFIRM" forState:UIControlStateNormal];
         }
         NSNumber *countNum = [(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId];
         self.numTotalItemsClaimed.text = [NSString stringWithFormat:@"%d/%d", ([self.curDeal.numberOfItems intValue] - [self.curDeal.numberOfItemsLeft intValue]), [self.curDeal.numberOfItems intValue]];
@@ -57,7 +60,8 @@
 }
 - (IBAction)confirmTouched:(UIButton *)sender {
     [[DataCenter sharedCenter] removeDeal:self.curDeal];
-    sender.hidden = YES;
+    sender.enabled = NO;
+    [sender setTitle:@"PURCHASED" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -59,17 +59,6 @@
                                     <color key="textColor" red="0.33725490200000002" green="0.89411764709999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sf-Al-fWu">
-                                    <rect key="frame" x="146" y="202" width="133" height="69"/>
-                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
-                                    <state key="normal" title="CONFIRM">
-                                        <color key="titleColor" red="0.33725490196078434" green="0.89411764705882346" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="confirmTouched:" destination="-1" eventType="touchUpInside" id="jfZ-FI-K6R"/>
-                                    </connections>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3/3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efy-Xt-BU6" userLabel="items claimed # - you">
                                     <rect key="frame" x="65" y="119" width="102" height="75"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="50"/>
@@ -82,6 +71,17 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sf-Al-fWu">
+                                    <rect key="frame" x="98" y="202" width="228" height="69"/>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="27"/>
+                                    <state key="normal" title="CONFIRM">
+                                        <color key="titleColor" red="0.33725490196078434" green="0.89411764705882346" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="confirmTouched:" destination="-1" eventType="touchUpInside" id="jfZ-FI-K6R"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.31732739370000002" green="0.31685445029999998" blue="0.32511559309999999" alpha="1" colorSpace="calibratedRGB"/>
                         </view>

@@ -13,7 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface SAVAddViewController () <GMSMapViewDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
+@interface SAVAddViewController () <GMSMapViewDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) PFObject *deal;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
 @property (weak, nonatomic) IBOutlet UITextField *storeNameField;
@@ -21,43 +21,110 @@
 @property (weak, nonatomic) IBOutlet UITextField *buyNumItemsField;
 @property (weak, nonatomic) IBOutlet UITextField *getNumItemsField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *discountField;
 @property (weak, nonatomic) IBOutlet UITextField *reservedItemsField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
+@property (weak, nonatomic) IBOutlet UITextField *pricePerItem;
+@property (weak, nonatomic) IBOutlet UILabel *totalPrice;
 @property (nonatomic, strong) UIImage *pickedImage;
 @property (nonatomic, strong) GMSMapView *mapView;
 @property (nonatomic, strong) GMSMarker *marker;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *rightView;
+
+@property (weak, nonatomic) IBOutlet UIView *leftView;
 @end
 
 @implementation SAVAddViewController
+//- (void)loadView
+//{
+//    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    CGRect screenRect = [UIScreen mainScreen].bounds;
+//    CGRect bigRect = screenRect;
+//    bigRect.size.width *= 2.0;
+//    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:screenRect];
+//    scrollView.scrollEnabled = YES;
+//    [self.view addSubview:scrollView];
+//    
+//    self.leftView = [[UIView alloc] initWithFrame:screenRect];
+//    self.deal = [PFObject objectWithClassName:@"Deal"];
+//    self.storeNameField = [[UITextField alloc] init];
+//    self.itemNameField.text = @"";
+//    self.buyNumItemsField.text = @"";
+//    self.getNumItemsField.text = @"";
+//    self.datePicker.date = [NSDate date];
+//    self.discountField.text = @"";
+//    self.reservedItemsField.text = @"";
+//    self.descriptionField.text = @"";
+//    self.pricePerItem.text = @"";
+//    self.totalPrice.text = @"";
+//    self.pickedImage = NULL;
+//    self.marker = NULL;
+//    
+//    
+//}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
+- (void)viewWillAppear:(BOOL)animated
+{
+   
+    [super viewWillAppear:animated];
     self.deal = [PFObject objectWithClassName:@"Deal"];
-
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
+    self.storeNameField.text = @"";
+    self.itemNameField.text = @"";
+    self.buyNumItemsField.text = @"";
+    self.getNumItemsField.text = @"";
+    self.datePicker.date = [NSDate date];
+    self.discountField.text = @"";
+    self.reservedItemsField.text = @"";
+    self.descriptionField.text = @"";
+    self.pricePerItem.text = @"";
+    self.totalPrice.text = @"";
+    self.pickedImage = NULL;
+    self.marker = NULL;
+    
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
-    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [locationManager requestWhenInUseAuthorization];
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
     }
-    [locationManager startUpdatingLocation];
-    CLLocation *location = locationManager.location;
-
+    [self.locationManager startUpdatingLocation];
+    CLLocation *location = self.locationManager.location;
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:location.coordinate.latitude
                                                             longitude:location.coordinate.longitude
                                                                  zoom:6];
-    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
+    self.mapView.camera = camera;
     self.mapView.myLocationEnabled = YES;
-    self.mapView.delegate = self;
     
     // Creates a marker in the center of the map.
     self.marker = [[GMSMarker alloc] init];
     self.marker.position = self.mapView.myLocation.coordinate;
     self.marker.map = self.mapView;
     
-    [self.view addSubview:self.mapView];
+    
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width*2, self.scrollView.frame.size.height);
+    
+    self.rightView.frame = CGRectMake(self.leftView.frame.size.width, 0, self.rightView.frame.size.width, self.rightView.frame.size.height);
+    
+    self.scrollView.pagingEnabled = YES;
+    // Do any additional setup after loading the view from its nib.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
+
+    self.getNumItemsField.delegate = self;
+    self.buyNumItemsField.delegate = self;
+    self.pricePerItem.delegate = self;
+
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0.0 longitude:0.0 zoom:1.0];
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
+    
+    self.mapView.delegate = self;
+    [self.leftView addSubview:self.mapView];
 
 }
 
@@ -68,9 +135,17 @@
     self.marker.map = self.mapView;
 }
 
-- (IBAction)textFieldDidEndOnExit:(id)sender
+- (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    self.deal[@"itemName"] = ((UITextField *)sender).text;
+    if (![self.buyNumItemsField.text isEqualToString:@""] && ![self.getNumItemsField.text isEqualToString:@""] && ![self.pricePerItem.text isEqualToString:@""] && ![self.discountField.text isEqualToString:@""]) {
+        int buynum = [self.buyNumItemsField.text intValue];
+        int getnum = [self.getNumItemsField.text intValue];
+        double priceper = [self.pricePerItem.text doubleValue];
+        double discount = [self.discountField.text doubleValue] / 100.0;
+        
+        double total = buynum * priceper + getnum * priceper * (1.0 - discount);
+        self.totalPrice.text = [NSString stringWithFormat:@"%.2f", total];
+    }
 }
 
 - (void)saveButtonTapped:(id)sender
@@ -82,6 +157,11 @@
     PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLatitude:self.marker.position.latitude longitude:self.marker.position.longitude];
     self.deal[@"dealLocation"] = currentLoc;
     self.deal[@"active"] = @YES;
+    self.deal[@"storeName"] = self.storeNameField.text;
+    self.deal[@"descript"] = self.descriptionField.text;
+    self.deal[@"numberOfItems"] = [NSNumber numberWithInt:([self.buyNumItemsField.text intValue] + [self.getNumItemsField.text intValue])];
+    self.deal[@"numberOfItemsLeft"] = [NSNumber numberWithInt:([self.buyNumItemsField.text intValue] + [self.getNumItemsField.text intValue] - [self.reservedItemsField.text intValue])];
+    self.deal[@"totalPrice"] = [NSNumber numberWithDouble:[self.totalPrice.text doubleValue]];
     
     if (self.pickedImage) {
         NSData *imageData = UIImagePNGRepresentation(self.pickedImage);
@@ -90,7 +170,20 @@
         self.deal[@"image"] = imageFile;
     }
     
-    [self.deal saveInBackground];
+    [self.deal saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            PFUser *user = [PFUser currentUser];
+            PFRelation *dealsRelation = [user relationForKey:@"dealsAsso"];
+            [dealsRelation addObject:self.deal];
+            NSMutableDictionary *curDict = user[@"dealNumDict"];
+            if (curDict == nil){
+                curDict = [[NSMutableDictionary alloc] init];
+            }
+            [curDict setObject:[NSNumber numberWithInteger:[self.reservedItemsField.text intValue]] forKey:self.deal.objectId];
+            user[@"dealNumDict"] = curDict;
+            [user save];
+        }
+    }];
     
     self.tabBarController.selectedIndex = 0;
 }
