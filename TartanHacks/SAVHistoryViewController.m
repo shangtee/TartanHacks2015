@@ -68,7 +68,7 @@
     cell.itemLabel.text = curDeal.itemName;
     cell.descriptionLabel.text = curDeal.descript;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
     dateFormatter.dateStyle = NSDateFormatterShortStyle;
     NSString *dateString = [dateFormatter stringFromDate:curDeal.dealExpirationTime];
     cell.dateLabel.text = dateString;

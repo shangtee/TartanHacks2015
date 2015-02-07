@@ -137,13 +137,6 @@
                     [cityString appendString:placemark.addressDictionary[@"City"]];
                     [cityString appendString:@" "];
                 }
-                if (placemark.addressDictionary[@"State"]) {
-                    [cityString appendString:placemark.addressDictionary[@"State"]];
-                    [cityString appendString:@" "];
-                }
-                if (placemark.addressDictionary[@"Country"]) {
-                    [cityString appendString:placemark.addressDictionary[@"Country"]];
-                }
                 cell.proximityLabel.text = cityString;
             }
         }
