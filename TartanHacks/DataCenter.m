@@ -48,4 +48,18 @@
         
 }
 
+-(void)fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate {
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        PFQuery *query = [Deal query];
+        // used to find location
+        [query whereKey:@"participants" equalTo:[PFUser currentUser]];
+        [query orderByDescending:@"dealExpirationTime"];
+        NSMutableArray *dealList = [[query findObjects] mutableCopy];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [delegate dealDataFetched:dealList];
+        });
+    });
+
+}
 @end

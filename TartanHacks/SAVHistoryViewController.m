@@ -12,7 +12,7 @@
 #import "Deal.h"
 #import "SAVHistoryDetailViewController.h"
 
-@interface SAVHistoryViewController ()<SAVMainDealDelegate>
+@interface SAVHistoryViewController ()<SAVHistoryDelegate>
 
 @property NSMutableArray *dealList;
 
@@ -27,7 +27,7 @@
     // Register this NIB, which contains the cell
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SAVHistoryTableViewCell"];
-    
+    [[DataCenter sharedCenter] fetchDealsOfUser:self];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
