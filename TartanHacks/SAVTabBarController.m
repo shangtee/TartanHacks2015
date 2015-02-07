@@ -55,10 +55,10 @@
     addViewController.tabBarItem.title = @"Add Deal";
     addViewController.title = @"Add Deal";
     UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addViewController];
-    addNav.navigationBar.barTintColor = [UIColor colorWithRed:245.0f/255.0f
-                                                         green:206.0f/255.0f
-                                                          blue:162.0f/255.0f
-                                                         alpha:1.0f];
+    addNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
+                                                        green:214.0f/255.0f
+                                                         blue:193.0f/255.0f
+                                                        alpha:1.0f];
     addNav.navigationBar.tintColor = [UIColor whiteColor];
     [addNav.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
@@ -75,10 +75,10 @@
     historyViewController.tabBarItem.title = @"Your Deals";
     historyViewController.title = @"Your Deals";
     UINavigationController *historyNav = [[UINavigationController alloc] initWithRootViewController:historyViewController];
-    historyNav.navigationBar.barTintColor = [UIColor colorWithRed:70.0f/255.0f
-                                                        green:61.0f/255.0f
-                                                         blue:74.0f/255.0f
-                                                        alpha:1.0f];
+    historyNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
+                                                            green:214.0f/255.0f
+                                                             blue:193.0f/255.0f
+                                                            alpha:1.0f];
     historyNav.navigationBar.tintColor = [UIColor whiteColor];
     [historyNav.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
