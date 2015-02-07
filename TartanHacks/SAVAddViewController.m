@@ -13,11 +13,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface SAVAddViewController () <GMSMapViewDelegate>
+@interface SAVAddViewController () <GMSMapViewDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 @property (nonatomic, strong) PFObject *deal;
 @property (weak, nonatomic) IBOutlet UITextField *itemName;
 @property (nonatomic, strong) NSString *finalItemName;
 @property (weak, nonatomic) IBOutlet UIPickerView *saleType;
+@property (weak, nonatomic) IBOutlet UIButton *imageButton;
+@property (nonatomic, strong) UIImage *pickedImage;
 @property (nonatomic, strong) GMSMapView *mapView;
 @property (nonatomic, strong) GMSMarker *marker;
 @end
@@ -29,9 +31,16 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
     self.deal = [PFObject objectWithClassName:@"Deal"];
-    
-    DataCenter *dataCenter = [DataCenter sharedCenter];
-    CLLocation *location = dataCenter.locationManager.location;
+
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [locationManager requestWhenInUseAuthorization];
+    }
+    [locationManager startUpdatingLocation];
+    CLLocation *location = locationManager.location;
+
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:location.coordinate.latitude
                                                             longitude:location.coordinate.longitude
                                                                  zoom:6];
@@ -70,9 +79,43 @@
     PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLatitude:self.marker.position.latitude longitude:self.marker.position.longitude];
     self.deal[@"dealLocation"] = currentLoc;
     self.deal[@"active"] = @YES;
+    
+    if (self.pickedImage) {
+        NSData *imageData = UIImagePNGRepresentation(self.pickedImage);
+        PFFile *imageFile = [PFFile fileWithName:@"image" data:imageData];
+        
+        self.deal[@"image"] = imageFile;
+    }
+    
     [self.deal saveInBackground];
     
     self.tabBarController.selectedIndex = 0;
+}
+
+- (IBAction)addPhotoButtonTapped:(id)sender
+{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        NSLog(@"No camera, on simulator");
+    } else {
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+        [self presentViewController:imagePickerController animated:YES completion:nil];
+    }
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.pickedImage = info[UIImagePickerControllerEditedImage];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)didReceiveMemoryWarning {

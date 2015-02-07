@@ -33,6 +33,10 @@
 	<string>1569995256580594</string>
 	<key>FacebookDisplayName</key>
 	<string>savvy</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Required for map placement.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Required for map placement.</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

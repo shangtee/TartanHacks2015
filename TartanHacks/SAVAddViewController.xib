@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAVAddViewController">
             <connections>
+                <outlet property="imageButton" destination="r4f-FZ-5kE" id="bhz-KS-HAs"/>
                 <outlet property="itemName" destination="4qj-wT-HIA" id="R6p-AH-68h"/>
                 <outlet property="view" destination="PSC-7e-sQN" id="FSg-hA-9qm"/>
             </connections>
@@ -37,11 +38,33 @@
                     <color key="textColor" red="0.5451211735" green="0.35375296789999999" blue="0.54050575270000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-FZ-5kE">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <state key="normal" title="Take a Photo">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="heightClass=regular" fixedFrame="YES">
+                        <rect key="frame" x="162" y="275" width="90" height="30"/>
+                    </variation>
+                    <connections>
+                        <action selector="addPhotoButtonTapped:" destination="-1" eventType="touchUpInside" id="oii-Dg-rSx"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="r4f-FZ-5kE"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular">
+                <mask key="subviews">
+                    <include reference="r4f-FZ-5kE"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="306" y="227"/>
         </view>
     </objects>
