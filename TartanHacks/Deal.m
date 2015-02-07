@@ -27,6 +27,9 @@
 @dynamic confirmedUsers;
 @dynamic participants;
 @dynamic initiator;
+@dynamic storeName;
+@dynamic itemName;
+@dynamic description;
 
 
 

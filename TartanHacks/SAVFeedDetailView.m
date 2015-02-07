@@ -34,4 +34,8 @@
 -(void)viewDidLoad{
     
 }
+
+- (IBAction)joinButtonPressed:(id)sender {
+    
+}
 @end
