@@ -70,13 +70,12 @@
 
 - (IBAction)textFieldDidEndOnExit:(id)sender
 {
-    self.finalItemName = ((UITextField *)sender).text;
-    self.deal[@"itemName"] = self.finalItemName;
+    self.deal[@"itemName"] = ((UITextField *)sender).text;
 }
 
 - (void)saveButtonTapped:(id)sender
 {
-    self.deal[@"itemName"] = self.itemName.text;
+    self.deal[@"itemName"] = self.itemNameField.text;
     PFRelation *newRelation = [self.deal relationForKey:@"participants"];
     [newRelation addObject:[PFUser currentUser]];
     self.deal[@"initiator"] = [PFUser currentUser];
