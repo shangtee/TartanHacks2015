@@ -29,14 +29,20 @@
 }
 
 // fetches the deals excluding the deals that the current user is part of
--(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate{
+-(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate
+                   radius: (double)rad
+{
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         PFQuery *query = [Deal query];
         // used to find location
         [self.locationManager startUpdatingLocation];
         CLLocation *location = self.locationManager.location;
-        [query whereKey:@"dealLocation" nearGeoPoint:[PFGeoPoint geoPointWithLocation:location] withinKilometers:[(NSNumber *)([PFUser currentUser][@"searchRadius"]) intValue]];
+        if (rad == 0.0) {
+            [query whereKey:@"dealLocation" nearGeoPoint:[PFGeoPoint geoPointWithLocation:location] withinKilometers:[(NSNumber *)([PFUser currentUser][@"searchRadius"]) intValue]];
+        } else {
+            [query whereKey:@"dealLocation" nearGeoPoint:[PFGeoPoint geoPointWithLocation:location] withinKilometers:rad];
+        }
         [query whereKey:@"participants" notEqualTo:[PFUser currentUser]];
         [query orderByDescending:@"dealExpirationTime"];
         NSMutableArray *dealList = [[query findObjects] mutableCopy];
@@ -69,7 +75,7 @@
     dispatch_async(queue, ^{
         PFUser *user = [PFUser currentUser];
         PFRelation *dealsRelation = [user relationForKey:@"dealsAsso"];
-        [dealsRelation addObject:user];
+        [dealsRelation addObject:deal];
         NSMutableDictionary *curDict = user[@"dealNumDict"];
         if (curDict == nil){
             curDict = [[NSMutableDictionary alloc] init];
@@ -78,8 +84,12 @@
         user[@"dealNumDict"] = curDict;
         [user save];
         PFRelation *participantsRelation = [deal relationForKey:@"participants"];
-        [participantsRelation addObject:deal];
+        [participantsRelation addObject:user];
+        NSNumber *num1 = deal[@"numberOfItemsLeft"];
+        NSInteger left = [num1 integerValue] - num;
+        deal[@"numberOfItemsLeft"] = [NSNumber numberWithInteger:left];
         [deal save];
+        
         PFUser *initiator = deal.initiator;
         PFQuery *pushQuery = [PFInstallation query];
         [pushQuery whereKey:@"user" equalTo:initiator];

@@ -17,7 +17,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 +(instancetype)sharedCenter;
--(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate;
+-(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate radius:(double)rad;
 -(void) fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate;
 -(void) addDealParticipant: (Deal *)deal numItems: (NSInteger)num;
 -(void) updateRadius: (int)radius;

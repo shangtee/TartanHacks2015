@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -7,9 +7,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAVFeedDetailView">
             <connections>
                 <outlet property="descript" destination="xH4-lL-dbc" id="2L1-aI-lUH"/>
-                <outlet property="imageView" destination="3Fr-th-2Cg" id="1Rr-Df-7Mw"/>
+                <outlet property="imageView" destination="By2-iP-CJC" id="2au-py-ZXh"/>
                 <outlet property="itemName" destination="ZSY-ea-O2g" id="q0k-1U-I7P"/>
                 <outlet property="storeName" destination="y6i-nW-fzX" id="MFX-L0-sDe"/>
+                <outlet property="toClaimNumItems" destination="jQg-2f-Fjl" id="f54-Ru-u8t"/>
+                <outlet property="toClaimStepper" destination="lPn-uT-1R7" id="Vye-a0-Xof"/>
+                <outlet property="totalPrice" destination="690-ZN-Gbp" id="VrX-xs-EUF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="tb7-Q4-YQu"/>
             </connections>
         </placeholder>
@@ -42,9 +45,6 @@
                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="e78827edf76ccdd53a35747574ce3417.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3Fr-th-2Cg">
-                                    <rect key="frame" x="49" y="64" width="288" height="232"/>
-                                </imageView>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86P-7H-h7f">
                                     <rect key="frame" x="-12" y="349" width="425" height="335"/>
                                     <subviews>
@@ -78,6 +78,9 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.31732739368750562" green="0.3168544503083342" blue="0.32511559311224492" alpha="1" colorSpace="calibratedRGB"/>
                                 </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="By2-iP-CJC">
+                                    <rect key="frame" x="78" y="64" width="240" height="241"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -92,7 +95,4 @@
             <point key="canvasLocation" x="327" y="413"/>
         </view>
     </objects>
-    <resources>
-        <image name="e78827edf76ccdd53a35747574ce3417.jpg" width="500" height="500"/>
-    </resources>
 </document>

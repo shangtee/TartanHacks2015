@@ -11,6 +11,7 @@
 
 @interface SAVFeedDetailView ()
 @property (strong, nonatomic) Deal *curDeal;
+@property int itemsSoFar;
 @end
 
 @implementation SAVFeedDetailView
@@ -34,18 +35,39 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    
     self.storeName.text = self.curDeal.storeName.uppercaseString;
     self.itemName.text = self.curDeal.itemName;
-    [self.curDeal.imageData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    PFFile *imageFile = self.curDeal.image;
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
             self.imageView.image = [UIImage imageWithData:data];
             // image can now be set on a UIImageView
         }
     }];
     self.descript.text = self.curDeal.descript;
+    self.toClaimNumItems.text = @"0";
+    self.itemsSoFar = 0;
+    [self.toClaimStepper addTarget:self action:@selector(addItem:) forControlEvents:UIControlEventValueChanged];
+    self.toClaimStepper.value = 0.0;
+    self.toClaimStepper.maximumValue = [self.curDeal.numberOfItemsLeft doubleValue];
 }
+
+- (void)addItem:(id)sender
+{
+    if ((self.toClaimStepper.value - self.itemsSoFar) > 0) {
+        self.itemsSoFar+= 1;
+    } else {
+        self.itemsSoFar = MAX(0, self.itemsSoFar - 1);
+    }
+    
+    self.toClaimNumItems.text = [NSString stringWithFormat:@"%d", self.itemsSoFar];
+}
+
 - (IBAction)participate:(id)sender {
-    [[DataCenter sharedCenter] addDealParticipant:self.curDeal numItems:[self.numItem.text intValue]];
+    [[DataCenter sharedCenter] addDealParticipant:self.curDeal numItems:[self.toClaimNumItems.text intValue]];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

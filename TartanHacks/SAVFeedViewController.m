@@ -16,6 +16,8 @@
 
 @interface SAVFeedViewController () <SAVMainDealDelegate>
 @property NSMutableArray *dealList;
+@property (nonatomic, strong) UISlider *radiusSlider;
+@property (nonatomic, strong) UILabel *radiusLabel;
 @end
 
 @implementation SAVFeedViewController
@@ -27,15 +29,51 @@
     // Register this NIB, which contains the cell
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SAVFeedTableViewCell"];
-    [[DataCenter sharedCenter] fetchDealsForUser:self];
+    [[DataCenter sharedCenter] fetchDealsForUser:self radius:0.0];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    
+    self.radiusSlider = [[UISlider alloc] initWithFrame: CGRectMake(10, 10, self.view.frame.size.width - 100, 40)];
+    self.radiusSlider.value = [(NSNumber *)([PFUser currentUser][@"searchRadius"]) floatValue];
+    self.radiusSlider.minimumValue = 0.0;
+    self.radiusSlider.maximumValue = 10.0;
+    
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 80)];
+    [self.tableView.tableHeaderView addSubview:self.radiusSlider];
+    
+    self.radiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width, 30)];
+    self.radiusLabel.text = [NSString stringWithFormat:@"Search Radius: %d km", (int)self.radiusSlider.value];
+    [self.tableView.tableHeaderView addSubview:self.radiusLabel];
+
+    [self.radiusSlider addTarget:self action:@selector(sliderValueConfirmed:) forControlEvents:UIControlEventValueChanged];
+    self.radiusSlider.continuous = NO;
+//    [self.radiusSlider addTarget:self action:@selector(sliderValueConfirmed:) forControlEvents:UIControlEventEditingDidEnd];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self refreshTableView];
+}
+
+-(void)sliderValueChanged:(UISlider *)slider
+{
+    self.radiusLabel.text = [NSString stringWithFormat:@"Search Radius: %d km", (int)self.radiusSlider.value];
+}
+
+- (void)sliderValueConfirmed:(UISlider *)slider
+{
+    [self sliderValueChanged:slider];
+    PFUser *me = [PFUser currentUser];
+    me[@"searchRadius"] = @(self.radiusSlider.value);
+    [me saveInBackground];
+    [[DataCenter sharedCenter] fetchDealsForUser:self radius:self.radiusSlider.value];
 }
 
 -(void)dealDataFetched:(NSMutableArray *)data{
@@ -133,8 +171,9 @@
 
 -(void)refreshTableView
 {
-    [[DataCenter sharedCenter] fetchDealsForUser:self];
+    [[DataCenter sharedCenter] fetchDealsForUser:self radius:0.0];
 }
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -51,7 +51,6 @@
       offWhite,NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Futura" size:18],
       NSFontAttributeName, nil]];
-    feedViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(settingPushedInFeed)];
     
     SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
     addViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
@@ -85,7 +84,6 @@
       offWhite,NSForegroundColorAttributeName,
       [UIFont fontWithName:@"Futura" size:18],
       NSFontAttributeName, nil]];
-    historyViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(settingPushedInHistory)];
     
     [self.tabBar setBarTintColor:seafoam];
     [self.tabBar setTintColor: offWhite];
@@ -100,16 +98,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)settingPushedInFeed
-{
-    [self.feedvc.navigationController pushViewController:[[SAVSettingsViewController alloc] init] animated:YES];
-}
-
--(void)settingPushedInHistory
-{
-    [self.historyvc.navigationController pushViewController:[[SAVSettingsViewController alloc] init] animated:YES];
-
-}
 - (void)refresh {
     [self.feedvc refreshTableView];
     [self.historyvc refreshTableView];

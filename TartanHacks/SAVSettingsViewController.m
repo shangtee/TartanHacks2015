@@ -9,6 +9,10 @@
 #import "SAVSettingsViewController.h"
 #import "DataCenter.h"
 
+#import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
 @interface SAVSettingsViewController ()
 @property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
 @property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
@@ -37,6 +41,7 @@
     [[DataCenter sharedCenter] updateRadius:(int)self.radiusSlider.value];
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -51,7 +56,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)logout:(id)sender {
+- (IBAction)logout:(id)sender
+{
+   [FBSession.activeSession closeAndClearTokenInformation];
 }
 
 @end
