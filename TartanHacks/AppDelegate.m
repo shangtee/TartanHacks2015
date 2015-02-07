@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Deal.h"
 #import "SAVLoginViewController.h"
+#import "SAVAddViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,7 @@
     [Deal load];
     [Parse setApplicationId:@"exjRjDnCFX3h6c9ocZ5ZPFU5FHPDvIis0tKK4fhH"
                   clientKey:@"2QAsGJ0MnVb1iDMkfLjvZpm3OsMNdppJOa7DcmY8"];
+    [FBLoginView class];
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);
@@ -33,8 +35,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
-    self.window.rootViewController = loginViewController;
+    
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
+        self.window.rootViewController = addViewController;
+    } else {
+        SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
+        self.window.rootViewController = loginViewController;
+    }
     [self.window makeKeyAndVisible];
     return YES;
 
