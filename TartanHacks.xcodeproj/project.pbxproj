@@ -32,6 +32,8 @@
 		F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */; };
 		F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */; };
 		F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */; };
+		F5A4D21C1A85BEAB00FC353F /* SAVFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */; };
+		F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,9 @@
 		F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVAddViewController.h; sourceTree = "<group>"; };
 		F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVAddViewController.m; sourceTree = "<group>"; };
 		F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVAddViewController.xib; sourceTree = "<group>"; };
+		F5A4D2191A85BEAB00FC353F /* SAVFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedTableViewCell.h; sourceTree = "<group>"; };
+		F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedTableViewCell.m; sourceTree = "<group>"; };
+		F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +215,9 @@
 		F5A4D20D1A85BCE300FC353F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5A4D2191A85BEAB00FC353F /* SAVFeedTableViewCell.h */,
+				F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */,
+				F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */,
 				F5A4D20E1A85BCFE00FC353F /* SAVFeedViewController.h */,
 				F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */,
 				F5A4D2111A85BD0D00FC353F /* SAVHistoryViewController.h */,
@@ -301,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */,
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
 				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
 			);
@@ -324,6 +333,7 @@
 				583214521A85B44F00CBBBA5 /* Deal.m in Sources */,
 				5832144E1A85B43000CBBBA5 /* DataCenter.m in Sources */,
 				F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */,
+				F5A4D21C1A85BEAB00FC353F /* SAVFeedTableViewCell.m in Sources */,
 				EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */,
 				F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
