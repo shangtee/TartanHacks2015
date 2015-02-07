@@ -40,6 +40,11 @@
     self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
+    
+    if (FBSession.activeSession.state != FBSessionStateCreatedTokenLoaded) {
+        SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
+        [tabBarController presentViewController:loginViewController animated:NO completion:NULL];
+    }
     return YES;
 
 }
