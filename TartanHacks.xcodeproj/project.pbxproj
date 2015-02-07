@@ -365,10 +365,11 @@
 				TargetAttributes = {
 					EB0B67C91A857FAB00156759 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = S979T5734D;
+						DevelopmentTeam = AJ8FG6Q86E;
 					};
 					EB0B67E21A857FAC00156759 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = AJ8FG6Q86E;
 						TestTargetID = EB0B67C91A857FAB00156759;
 					};
 				};
@@ -577,6 +578,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -588,6 +591,7 @@
 				INFOPLIST_FILE = TartanHacksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TartanHacks.app/TartanHacks";
 			};
 			name = Debug;
@@ -596,6 +600,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -603,6 +609,7 @@
 				INFOPLIST_FILE = TartanHacksTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TartanHacks.app/TartanHacks";
 			};
 			name = Release;
