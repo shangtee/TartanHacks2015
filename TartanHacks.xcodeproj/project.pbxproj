@@ -28,6 +28,10 @@
 		EB0B67EA1A857FAC00156759 /* TartanHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67E91A857FAC00156759 /* TartanHacksTests.m */; };
 		EB19EF851A85B74200AA7E24 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */; };
 		EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */; };
+		F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */; };
+		F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */; };
+		F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */; };
+		F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,13 @@
 		EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		EB19EF861A85B8F800AA7E24 /* SAVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVLoginViewController.h; sourceTree = "<group>"; };
 		EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVLoginViewController.m; sourceTree = "<group>"; };
+		F5A4D20E1A85BCFE00FC353F /* SAVFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedViewController.h; sourceTree = "<group>"; };
+		F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedViewController.m; sourceTree = "<group>"; };
+		F5A4D2111A85BD0D00FC353F /* SAVHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVHistoryViewController.h; sourceTree = "<group>"; };
+		F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVHistoryViewController.m; sourceTree = "<group>"; };
+		F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVAddViewController.h; sourceTree = "<group>"; };
+		F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVAddViewController.m; sourceTree = "<group>"; };
+		F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVAddViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +169,7 @@
 		EB0B67CC1A857FAB00156759 /* TartanHacks */ = {
 			isa = PBXGroup;
 			children = (
+				F5A4D20D1A85BCE300FC353F /* ViewControllers */,
 				5832144F1A85B43B00CBBBA5 /* ParseData */,
 				EB0B67D11A857FAB00156759 /* AppDelegate.h */,
 				EB0B67D21A857FAB00156759 /* AppDelegate.m */,
@@ -193,6 +205,20 @@
 				EB0B67E81A857FAC00156759 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5A4D20D1A85BCE300FC353F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5A4D20E1A85BCFE00FC353F /* SAVFeedViewController.h */,
+				F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */,
+				F5A4D2111A85BD0D00FC353F /* SAVHistoryViewController.h */,
+				F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */,
+				F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */,
+				F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */,
+				F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
+				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */,
 				583214521A85B44F00CBBBA5 /* Deal.m in Sources */,
 				5832144E1A85B43000CBBBA5 /* DataCenter.m in Sources */,
+				F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */,
 				EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */,
+				F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
 				EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */,
 			);
