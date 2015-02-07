@@ -36,7 +36,7 @@
         // used to find location
         [self.locationManager startUpdatingLocation];
         CLLocation *location = self.locationManager.location;
-        [query whereKey:@"dealLocation" nearGeoPoint:[PFGeoPoint geoPointWithLocation:location] withinKilometers:10];
+        [query whereKey:@"dealLocation" nearGeoPoint:[PFGeoPoint geoPointWithLocation:location] withinKilometers:[(NSNumber *)([PFUser currentUser][@"searchRadius"]) intValue]];
         [query whereKey:@"participants" notEqualTo:[PFUser currentUser]];
         [query orderByDescending:@"dealExpirationTime"];
         NSMutableArray *dealList = [[query findObjects] mutableCopy];
@@ -83,6 +83,16 @@
         [push sendPush:nil];
     });
     
+}
+
+-(void)updateRadius:(int)radius
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        PFUser *currentUser = [PFUser currentUser];
+        currentUser[@"searchRadius"] = [NSNumber numberWithInt:radius];
+        [currentUser save];
+    });
 }
 
 @end

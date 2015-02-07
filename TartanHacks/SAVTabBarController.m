@@ -16,7 +16,7 @@
 
 @interface SAVTabBarController ()
 
-@property (nonatomic, strong) SAVAddViewController *addvc;
+@property (nonatomic, strong) SAVFeedViewController *feedvc;
 @property (nonatomic, strong) SAVHistoryViewController *historyvc;
 
 @end
@@ -91,7 +91,7 @@
 
     self.viewControllers = [NSMutableArray arrayWithObjects:feedNav, addNav, historyNav, nil];
     self.historyvc = historyViewController;
-    self.addvc = addViewController;
+    self.feedvc = feedViewController;
     
 }
 
@@ -101,7 +101,7 @@
 }
 
 - (void)refresh {
-    [self.addvc refreshTableView];
+    [self.feedvc refreshTableView];
     [self.historyvc refreshTableView];
 }
 /*

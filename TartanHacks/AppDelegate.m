@@ -14,6 +14,8 @@
 
 #import "Deal.h"
 #import "SAVTabBarController.h"
+#import "DataCenter.h"
+
 @interface AppDelegate () <FBGraphUser>
 
 @end
@@ -46,6 +48,7 @@
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
+            [[DataCenter sharedCenter] updateRadius:10];
             SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
             self.window.rootViewController = tabBarController;
         } else {
