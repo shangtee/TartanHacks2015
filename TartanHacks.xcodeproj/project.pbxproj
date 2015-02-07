@@ -11,6 +11,8 @@
 		EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67D21A857FAB00156759 /* AppDelegate.m */; };
 		EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67DA1A857FAB00156759 /* Images.xcassets */; };
 		EB0B67EA1A857FAC00156759 /* TartanHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67E91A857FAC00156759 /* TartanHacksTests.m */; };
+		EBDEDE4A1A85ACF1001612B0 /* SAVPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDE491A85ACF1001612B0 /* SAVPerson.m */; };
+		EBDEDE4D1A85ACFC001612B0 /* SAVDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDEDE4C1A85ACFC001612B0 /* SAVDeal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,10 @@
 		EB0B67E31A857FAC00156759 /* TartanHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TartanHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0B67E81A857FAC00156759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0B67E91A857FAC00156759 /* TartanHacksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TartanHacksTests.m; sourceTree = "<group>"; };
+		EBDEDE481A85ACF1001612B0 /* SAVPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVPerson.h; sourceTree = "<group>"; };
+		EBDEDE491A85ACF1001612B0 /* SAVPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVPerson.m; sourceTree = "<group>"; };
+		EBDEDE4B1A85ACFC001612B0 /* SAVDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVDeal.h; sourceTree = "<group>"; };
+		EBDEDE4C1A85ACFC001612B0 /* SAVDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVDeal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,10 @@
 			children = (
 				EB0B67D11A857FAB00156759 /* AppDelegate.h */,
 				EB0B67D21A857FAB00156759 /* AppDelegate.m */,
+				EBDEDE481A85ACF1001612B0 /* SAVPerson.h */,
+				EBDEDE491A85ACF1001612B0 /* SAVPerson.m */,
+				EBDEDE4B1A85ACFC001612B0 /* SAVDeal.h */,
+				EBDEDE4C1A85ACFC001612B0 /* SAVDeal.m */,
 				EB0B67DA1A857FAB00156759 /* Images.xcassets */,
 				EB0B67CD1A857FAB00156759 /* Supporting Files */,
 			);
@@ -206,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDEDE4D1A85ACFC001612B0 /* SAVDeal.m in Sources */,
 				EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */,
+				EBDEDE4A1A85ACF1001612B0 /* SAVPerson.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
