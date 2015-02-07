@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		580A14351A85D4CE00259209 /* SAVFeedDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A14341A85D4CE00259209 /* SAVFeedDetailView.m */; };
-		580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580A14361A85D62800259209 /* SAVFeedNib.xib */; };
+		580A14371A85D62800259209 /* SAVFeedDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580A14361A85D62800259209 /* SAVFeedDetailView.xib */; };
 		583214351A85B29300CBBBA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */; };
 		583214361A85B29300CBBBA5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142B1A85B29300CBBBA5 /* CFNetwork.framework */; };
 		583214371A85B29300CBBBA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */; };
@@ -23,6 +23,7 @@
 		583214491A85B3B000CBBBA5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 583214481A85B3B000CBBBA5 /* Parse.framework */; };
 		5832144E1A85B43000CBBBA5 /* DataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5832144D1A85B43000CBBBA5 /* DataCenter.m */; };
 		583214521A85B44F00CBBBA5 /* Deal.m in Sources */ = {isa = PBXBuildFile; fileRef = 583214511A85B44F00CBBBA5 /* Deal.m */; };
+		8AF2F3FA1A863B0200C2D430 /* e78827edf76ccdd53a35747574ce3417.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8AF2F3F91A863B0200C2D430 /* e78827edf76ccdd53a35747574ce3417.jpg */; };
 		EB0B67D01A857FAB00156759 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67CF1A857FAB00156759 /* main.m */; };
 		EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67D21A857FAB00156759 /* AppDelegate.m */; };
 		EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67DA1A857FAB00156759 /* Images.xcassets */; };
@@ -71,7 +72,7 @@
 /* Begin PBXFileReference section */
 		580A14331A85D4CE00259209 /* SAVFeedDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedDetailView.h; sourceTree = "<group>"; };
 		580A14341A85D4CE00259209 /* SAVFeedDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedDetailView.m; sourceTree = "<group>"; };
-		580A14361A85D62800259209 /* SAVFeedNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedNib.xib; sourceTree = "<group>"; };
+		580A14361A85D62800259209 /* SAVFeedDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedDetailView.xib; sourceTree = "<group>"; };
 		5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5832142B1A85B29300CBBBA5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +89,7 @@
 		5832144D1A85B43000CBBBA5 /* DataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCenter.m; sourceTree = "<group>"; };
 		583214501A85B44F00CBBBA5 /* Deal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deal.h; sourceTree = "<group>"; };
 		583214511A85B44F00CBBBA5 /* Deal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deal.m; sourceTree = "<group>"; };
+		8AF2F3F91A863B0200C2D430 /* e78827edf76ccdd53a35747574ce3417.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = e78827edf76ccdd53a35747574ce3417.jpg; sourceTree = "<group>"; };
 		EB0B67CA1A857FAB00156759 /* TartanHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TartanHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0B67CE1A857FAB00156759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0B67CF1A857FAB00156759 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		EB0B67CC1A857FAB00156759 /* TartanHacks */ = {
 			isa = PBXGroup;
 			children = (
+				8AF2F3F91A863B0200C2D430 /* e78827edf76ccdd53a35747574ce3417.jpg */,
 				F5A4D20D1A85BCE300FC353F /* ViewControllers */,
 				5832144F1A85B43B00CBBBA5 /* ParseData */,
 				EB0B67D11A857FAB00156759 /* AppDelegate.h */,
@@ -311,7 +314,7 @@
 				F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */,
 				580A14331A85D4CE00259209 /* SAVFeedDetailView.h */,
 				580A14341A85D4CE00259209 /* SAVFeedDetailView.m */,
-				580A14361A85D62800259209 /* SAVFeedNib.xib */,
+				580A14361A85D62800259209 /* SAVFeedDetailView.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -401,8 +404,9 @@
 				EB120B471A85F7E600A7318F /* SAVSettingsViewController.xib in Resources */,
 				F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */,
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
+				8AF2F3FA1A863B0200C2D430 /* e78827edf76ccdd53a35747574ce3417.jpg in Resources */,
 				EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */,
-				580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */,
+				580A14371A85D62800259209 /* SAVFeedDetailView.xib in Resources */,
 				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
 				F5A4D2271A85D6CC00FC353F /* SAVHistoryTableViewCell.xib in Resources */,
 				F5A4D22C1A85DB5300FC353F /* SAVHistoryDetailViewController.xib in Resources */,

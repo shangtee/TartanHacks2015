@@ -34,7 +34,7 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.storeName.text = self.curDeal.storeName;
+    self.storeName.text = self.curDeal.storeName.uppercaseString;
     self.itemName.text = self.curDeal.itemName;
     [self.curDeal.imageData getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
