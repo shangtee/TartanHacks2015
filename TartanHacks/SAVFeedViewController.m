@@ -11,6 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "DataCenter.h"
 #import "SAVFeedTableViewCell.h"
+#import "SAVFeedDetailView.h"
 #import "Deal.h"
 
 @interface SAVFeedViewController () <SAVMainDealDelegate>
@@ -90,6 +91,17 @@
     // Configure the cell...
     
     return cell;
+}
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SAVFeedDetailView *newDetailView = [[SAVFeedDetailView alloc] initWithDeal:self.dealList[indexPath.row]];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(_done)];
+    self.navigationController.navigationItem.rightBarButtonItem = leftBarButtonItem;
+    [self.navigationController pushViewController:newDetailView animated:YES];
+}
+
+-(void)_done{
+    [self.navigationController popToViewController:self animated:YES];
 }
 
 /*
