@@ -39,18 +39,19 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
-    self.window.rootViewController = tabBarController;
-    
     [self.window makeKeyAndVisible];
-
+    
     [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
         if (!user) {
             NSLog(@"Uh oh. The user cancelled the Facebook login.");
         } else if (user.isNew) {
             NSLog(@"User signed up and logged in through Facebook!");
+            SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
+            self.window.rootViewController = tabBarController;
         } else {
             NSLog(@"User logged in through Facebook!");
+            SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
+            self.window.rootViewController = tabBarController;
         }
     }];
 
