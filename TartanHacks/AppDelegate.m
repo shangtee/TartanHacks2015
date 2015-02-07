@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Deal.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [Deal load];
     [Parse setApplicationId:@"exjRjDnCFX3h6c9ocZ5ZPFU5FHPDvIis0tKK4fhH"
                   clientKey:@"2QAsGJ0MnVb1iDMkfLjvZpm3OsMNdppJOa7DcmY8"];
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
