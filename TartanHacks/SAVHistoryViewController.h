@@ -10,4 +10,6 @@
 
 @interface SAVHistoryViewController : UITableViewController
 
+-(void)refreshTableView;
+
 @end

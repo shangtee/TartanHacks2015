@@ -28,6 +28,8 @@
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SAVFeedTableViewCell"];
     [[DataCenter sharedCenter] fetchDealsForUser:self];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,6 +41,7 @@
 -(void)dealDataFetched:(NSMutableArray *)data{
     self.dealList = data;
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,6 +123,10 @@
     [self.navigationController popToViewController:self animated:YES];
 }
 
+-(void)refreshTableView
+{
+    [[DataCenter sharedCenter] fetchDealsForUser:self];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

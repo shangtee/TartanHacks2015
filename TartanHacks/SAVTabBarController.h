@@ -10,4 +10,6 @@
 
 @interface SAVTabBarController : UITabBarController
 
+- (void)refresh;
+
 @end
