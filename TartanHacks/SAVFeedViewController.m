@@ -65,6 +65,13 @@
     cell.dealLabel.text = curDeal.storeName;
     cell.itemLabel.text = curDeal.itemName.uppercaseString;
     cell.descriptionLabel.text = curDeal.descript;
+    // MAKE A RANDOM COLOR for the bar
+    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 );  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.8 ;  //  0.5 to 1.0, away from black
+    UIColor *color = [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
+    cell.color.backgroundColor = color;
+
     NSInteger interval = (NSInteger)[curDeal.dealExpirationTime timeIntervalSinceNow];
     NSInteger seconds = interval % 60;
     NSInteger minutes = (interval / 60) % 60;

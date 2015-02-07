@@ -36,9 +36,9 @@
     feedViewController.tabBarItem.title = @"Feed";
     feedViewController.title = @"Around You";
     UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedViewController];
-    feedNav.navigationBar.barTintColor = [UIColor colorWithRed:70.0f/255.0f
-                                                         green:61.0f/255.0f
-                                                          blue:74.0f/255.0f
+    feedNav.navigationBar.barTintColor = [UIColor colorWithRed:149.0f/255.0f
+                                                         green:214.0f/255.0f
+                                                          blue:193.0f/255.0f
                                                          alpha:1.0f];
     feedNav.navigationBar.tintColor = [UIColor whiteColor];
     [feedNav.navigationBar
@@ -55,9 +55,9 @@
     addViewController.tabBarItem.title = @"Add Deal";
     addViewController.title = @"Add Deal";
     UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addViewController];
-    addNav.navigationBar.barTintColor = [UIColor colorWithRed:70.0f/255.0f
-                                                         green:61.0f/255.0f
-                                                          blue:74.0f/255.0f
+    addNav.navigationBar.barTintColor = [UIColor colorWithRed:245.0f/255.0f
+                                                         green:206.0f/255.0f
+                                                          blue:162.0f/255.0f
                                                          alpha:1.0f];
     addNav.navigationBar.tintColor = [UIColor whiteColor];
     [addNav.navigationBar

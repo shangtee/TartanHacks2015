@@ -38,18 +38,19 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8b-6U-chL">
-                        <rect key="frame" x="18" y="38" width="175" height="39"/>
+                        <rect key="frame" x="18" y="36" width="175" height="39"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                        <color key="textColor" red="0.5451211735" green="0.35375296789999999" blue="0.54050575270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.30893024605010044" green="0.70192920918367352" blue="0.65032244178707066" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xmj-QO-JID">
                         <rect key="frame" x="0.0" y="-2" width="10" height="89"/>
-                        <color key="backgroundColor" red="0.5451211735" green="0.35375296789999999" blue="0.54050575270000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.75625624642117517" green="0.89156170280612246" blue="0.81533597769353172" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="color" destination="Xmj-QO-JID" id="7qR-CB-5Cl"/>
                 <outlet property="dealLabel" destination="Fr1-bp-eYB" id="GxM-gu-Jxp"/>
                 <outlet property="descriptionLabel" destination="p8b-6U-chL" id="Vxa-Zt-Y1h"/>
                 <outlet property="itemLabel" destination="roK-OZ-9xQ" id="P1z-YM-luT"/>

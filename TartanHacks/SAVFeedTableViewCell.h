@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *proximityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeRemainingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIView *color;
 
 @end
