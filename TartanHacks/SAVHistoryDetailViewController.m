@@ -23,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.storeLabel.text = self.curDeal.storeName;
+    self.itemLabel.text = self.curDeal.itemName;
+    self.descriptionLabel.text = self.curDeal.descript;
+    NSNumber *countNum = [(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId];
+    self.countLabel.text = countNum.description;
 }
 
 - (void)didReceiveMemoryWarning {
