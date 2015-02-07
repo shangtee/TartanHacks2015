@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Deal.h"
 
 @protocol SAVMainDealDelegate;
 @protocol SAVHistoryDelegate;
@@ -18,6 +19,7 @@
 +(instancetype)sharedCenter;
 -(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate;
 -(void) fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate;
+-(void) addDealParticipant: (Deal *)deal;
 @end
 
 @protocol SAVMainDealDelegate <NSObject>

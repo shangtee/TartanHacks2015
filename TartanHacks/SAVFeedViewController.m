@@ -75,18 +75,28 @@
             
         } else { // location services on for this app. make a closet object and set its FormattedAddressLinesField. enable using current city
             CLPlacemark *placemark = [placemarks lastObject];
-            // only save the city of the current location.
-            NSMutableString *cityString = [[NSMutableString alloc] init];
-            if (placemark.addressDictionary[@"SubLocality"]) {
-                [cityString appendString:placemark.addressDictionary[@"SubLocality"]];
-                [cityString appendString:@" "];
+            if (!placemark) {
+                cell.proximityLabel.text = @"Pittsburgh";
+            } else {
+                // only save the city of the current location.
+                NSMutableString *cityString = [[NSMutableString alloc] init];
+                if (placemark.addressDictionary[@"SubLocality"]) {
+                    [cityString appendString:placemark.addressDictionary[@"SubLocality"]];
+                    [cityString appendString:@" "];
+                }
+                if (placemark.addressDictionary[@"City"]) {
+                    [cityString appendString:placemark.addressDictionary[@"City"]];
+                    [cityString appendString:@" "];
+                }
+                if (placemark.addressDictionary[@"State"]) {
+                    [cityString appendString:placemark.addressDictionary[@"State"]];
+                    [cityString appendString:@" "];
+                }
+                if (placemark.addressDictionary[@"Country"]) {
+                    [cityString appendString:placemark.addressDictionary[@"Country"]];
+                }
+                cell.proximityLabel.text = cityString;
             }
-            [cityString appendString:placemark.addressDictionary[@"City"]];
-            [cityString appendString:@" "];
-            [cityString appendString:placemark.addressDictionary[@"State"]];
-            [cityString appendString:@" "];
-            [cityString appendString:placemark.addressDictionary[@"Country"]];
-            cell.proximityLabel.text = cityString;
         }
     }];
     // Configure the cell...
@@ -99,6 +109,11 @@
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(_done)];
     self.navigationController.navigationItem.rightBarButtonItem = leftBarButtonItem;
     [self.navigationController pushViewController:newDetailView animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 132;
 }
 
 -(void)_done{
