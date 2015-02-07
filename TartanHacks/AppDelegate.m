@@ -11,7 +11,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "Deal.h"
 #import "SAVLoginViewController.h"
-#import "SAVAddViewController.h"
+#import "SAVTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -36,13 +36,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
-        self.window.rootViewController = addViewController;
-    } else {
-        SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
-        self.window.rootViewController = loginViewController;
-    }
+    SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
+    self.window.rootViewController = tabBarController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 

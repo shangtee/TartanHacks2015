@@ -7,6 +7,8 @@
 //
 
 #import "SAVFeedViewController.h"
+#import "SAVLoginViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface SAVFeedViewController ()
 
@@ -16,6 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    UILabel *helloLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    helloLabel.text = @"Hello";
+    [self.view addSubview:helloLabel];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -27,6 +35,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    if (FBSession.activeSession.state != FBSessionStateCreatedTokenLoaded) {
+        SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
+        [self.tabBarController presentViewController:loginViewController animated:NO completion:NULL];
+    }
 }
 
 #pragma mark - Table view data source

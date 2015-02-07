@@ -1,32 +1,30 @@
 //
-//  SAVLoginViewController.m
+//  SAVTabBarController.m
 //  TartanHacks
 //
 //  Created by Sophia Anopa on 06.02.15.
 //  Copyright (c) 2015 SLZA. All rights reserved.
 //
 
+#import "SAVTabBarController.h"
 #import "SAVLoginViewController.h"
+#import "SAVFeedViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface SAVLoginViewController () <FBLoginViewDelegate>
+@interface SAVTabBarController ()
 
 @end
 
-@implementation SAVLoginViewController
+@implementation SAVTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    FBLoginView *loginView = [[FBLoginView alloc] init];
-    loginView.delegate = self;
-    loginView.center = self.view.center;
-    [self.view addSubview:loginView];
-
-}
-
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
-{
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+    // Do any additional setup after loading the view from its nib.
+    
+    SAVFeedViewController *feedViewController = [[SAVFeedViewController alloc] init];
+    
+    self.viewControllers = [NSMutableArray arrayWithObjects:feedViewController, nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
