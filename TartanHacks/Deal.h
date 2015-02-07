@@ -22,5 +22,5 @@
 @property (retain) PFUser *initiator;
 @property (retain) NSString *storeName;
 @property (retain) NSString *itemName;
-@property (retain) NSString *description;
+@property (retain) NSString *descript;
 @end
