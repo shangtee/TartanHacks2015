@@ -28,6 +28,8 @@
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SAVHistoryTableViewCell"];
     [[DataCenter sharedCenter] fetchDealsOfUser:self];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -38,6 +40,7 @@
 -(void)dealDataFetched:(NSMutableArray *)data{
     self.dealList = data;
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,8 +88,14 @@
     return 80;
 }
 
--(void)_done{
+-(void)_done
+{
     [self.navigationController popToViewController:self animated:YES];
+}
+
+-(void)refreshTableView
+{
+    [[DataCenter sharedCenter] fetchDealsOfUser:self];
 }
 /*
 // Override to support conditional editing of the table view.
