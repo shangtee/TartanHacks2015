@@ -14,7 +14,8 @@
 #import "Deal.h"
 #import "SAVLoginViewController.h"
 #import "SAVTabBarController.h"
-
+#import "SAVHistoryViewController.h"
+#import "SAVFeedViewController.h"
 @interface AppDelegate () <FBGraphUser>
 
 @end
@@ -48,10 +49,28 @@
             NSLog(@"User signed up and logged in through Facebook!");
             SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
             self.window.rootViewController = tabBarController;
+            SAVHistoryViewController *historyvc = [[SAVHistoryViewController alloc] init];
+            historyvc.title = @"Your Deals";
+            UINavigationController *historynav = [[UINavigationController alloc] initWithRootViewController:historyvc];
+            historynav.title = @"Your Deals";
+            SAVFeedViewController *feedvc = [[SAVFeedViewController alloc] init];
+            feedvc.title = @"Around You";
+            UINavigationController *feednav = [[UINavigationController alloc] initWithRootViewController:feedvc];
+            feednav.title = @"Around You";
+            tabBarController.viewControllers = @[feednav, historynav];
         } else {
             NSLog(@"User logged in through Facebook!");
             SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
             self.window.rootViewController = tabBarController;
+            SAVHistoryViewController *historyvc = [[SAVHistoryViewController alloc] init];
+            UINavigationController *historynav = [[UINavigationController alloc] initWithRootViewController:historyvc];
+            SAVFeedViewController *feedvc = [[SAVFeedViewController alloc] init];
+            UINavigationController *feednav = [[UINavigationController alloc] initWithRootViewController:feedvc];
+            historyvc.title = @"Your Deals";
+            historynav.title = @"Your Deals";
+            feedvc.title = @"Around You";
+            feednav.title = @"Around You";
+            tabBarController.viewControllers = @[feednav, historynav];
         }
     }];
 
