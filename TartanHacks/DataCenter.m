@@ -74,6 +74,13 @@
         PFRelation *participantsRelation = [deal relationForKey:@"participants"];
         [participantsRelation addObject:deal];
         [deal save];
+        PFUser *initiator = deal.initiator;
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"user" equalTo:initiator];
+        PFPush *push = [[PFPush alloc] init];
+        [push setQuery:pushQuery];
+        [push setMessage:@"A new person joined your deal!"];
+        [push sendPush:nil];
     });
     
 }
