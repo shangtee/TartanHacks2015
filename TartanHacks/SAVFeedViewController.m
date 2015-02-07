@@ -27,6 +27,7 @@
     // Register this NIB, which contains the cell
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"SAVFeedTableViewCell"];
+    [[DataCenter sharedCenter] fetchDealsForUser:self];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

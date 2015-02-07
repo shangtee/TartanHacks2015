@@ -35,7 +35,4 @@
     
 }
 
-- (IBAction)joinButtonPressed:(id)sender {
-    
-}
 @end
