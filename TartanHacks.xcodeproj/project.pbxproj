@@ -28,6 +28,7 @@
 		EB0B67EA1A857FAC00156759 /* TartanHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67E91A857FAC00156759 /* TartanHacksTests.m */; };
 		EB120B3F1A85CC3800A7318F /* SAVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB120B3D1A85CC3800A7318F /* SAVTabBarController.m */; };
 		EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB120B3E1A85CC3800A7318F /* SAVTabBarController.xib */; };
+		EB120B421A85DFFF00A7318F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */; };
 		EB19EF851A85B74200AA7E24 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */; };
 		EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */; };
 		F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */; };
@@ -78,6 +79,7 @@
 		EB120B3C1A85CC3800A7318F /* SAVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVTabBarController.h; sourceTree = "<group>"; };
 		EB120B3D1A85CC3800A7318F /* SAVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVTabBarController.m; sourceTree = "<group>"; };
 		EB120B3E1A85CC3800A7318F /* SAVTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVTabBarController.xib; sourceTree = "<group>"; };
+		EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		EB19EF861A85B8F800AA7E24 /* SAVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVLoginViewController.h; sourceTree = "<group>"; };
 		EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVLoginViewController.m; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				583214491A85B3B000CBBBA5 /* Parse.framework in Frameworks */,
 				5832143A1A85B29300CBBBA5 /* libz.dylib in Frameworks */,
 				5832144B1A85B3C300CBBBA5 /* Bolts.framework in Frameworks */,
+				EB120B421A85DFFF00A7318F /* ParseFacebookUtils.framework in Frameworks */,
 				5832143B1A85B29300CBBBA5 /* MobileCoreServices.framework in Frameworks */,
 				5832143C1A85B29300CBBBA5 /* QuartzCore.framework in Frameworks */,
 				5832143D1A85B29300CBBBA5 /* Security.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		583214251A85B20400CBBBA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */,
 				EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */,
 				5832144A1A85B3C300CBBBA5 /* Bolts.framework */,
 				583214481A85B3B000CBBBA5 /* Parse.framework */,

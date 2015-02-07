@@ -9,11 +9,13 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
 #import "Deal.h"
 #import "SAVLoginViewController.h"
 #import "SAVTabBarController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <FBGraphUser>
 
 @end
 
@@ -25,6 +27,7 @@
     [Parse setApplicationId:@"exjRjDnCFX3h6c9ocZ5ZPFU5FHPDvIis0tKK4fhH"
                   clientKey:@"2QAsGJ0MnVb1iDMkfLjvZpm3OsMNdppJOa7DcmY8"];
     [FBLoginView class];
+    [PFFacebookUtils initializeFacebook];
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);
@@ -40,11 +43,17 @@
     self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
-    
-    if (FBSession.activeSession.state != FBSessionStateCreatedTokenLoaded) {
-        SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
-        [tabBarController presentViewController:loginViewController animated:NO completion:NULL];
-    }
+
+    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+        } else {
+            NSLog(@"User logged in through Facebook!");
+        }
+    }];
+
     return YES;
 
 }
@@ -77,6 +86,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 
 }
 

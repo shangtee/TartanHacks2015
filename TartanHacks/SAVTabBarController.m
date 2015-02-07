@@ -9,6 +9,9 @@
 #import "SAVTabBarController.h"
 #import "SAVLoginViewController.h"
 #import "SAVFeedViewController.h"
+#import "SAVAddViewController.h"
+#import "SAVHistoryViewController.h"
+
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface SAVTabBarController ()
@@ -22,8 +25,18 @@
     // Do any additional setup after loading the view from its nib.
     
     SAVFeedViewController *feedViewController = [[SAVFeedViewController alloc] init];
+    feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+    feedViewController.tabBarItem.title = @"Feed";
     
-    self.viewControllers = [NSMutableArray arrayWithObjects:feedViewController, nil];
+    SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
+    addViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
+    addViewController.tabBarItem.title = @"Add Deal";
+    
+    SAVHistoryViewController *historyViewController = [[SAVHistoryViewController alloc] init];
+    historyViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:2];
+    historyViewController.tabBarItem.title = @"Your Deals";
+    
+    self.viewControllers = [NSMutableArray arrayWithObjects:feedViewController, addViewController, historyViewController, nil];
     
 }
 
