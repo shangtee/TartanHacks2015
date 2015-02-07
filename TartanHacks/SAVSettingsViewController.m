@@ -7,8 +7,12 @@
 //
 
 #import "SAVSettingsViewController.h"
+#import "DataCenter.h"
 
 @interface SAVSettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISlider *radiusSlider;
+@property (weak, nonatomic) IBOutlet UILabel *sliderLabel;
+
 
 @end
 
@@ -17,8 +21,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.radiusSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
 }
 
+-(void)sliderValueChanged:(UISlider *)slider
+{
+    self.sliderLabel.text = [NSString stringWithFormat:@"%d",(int)slider.value];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    [self viewWillDisappear:animated];
+    [[DataCenter sharedCenter] updateRadius:(int)self.radiusSlider.value];
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,5 +49,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)logout:(id)sender {
+}
 
 @end
