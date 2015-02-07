@@ -37,9 +37,9 @@
                                        alpha:1.0f];
     
     SAVFeedViewController *feedViewController = [[SAVFeedViewController alloc] init];
-    feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
+    feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"house.gif"] selectedImage:[UIImage imageNamed:@"house.gif"]];
     feedViewController.tabBarItem.title = @"Feed";
-    feedViewController.title = @"Around You";
+    feedViewController.title = @"around you";
     UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedViewController];
     feedNav.navigationBar.barTintColor = seafoam;
     feedNav.navigationBar.tintColor = [UIColor whiteColor];
