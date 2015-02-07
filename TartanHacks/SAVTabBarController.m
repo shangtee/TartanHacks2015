@@ -27,16 +27,22 @@
     SAVFeedViewController *feedViewController = [[SAVFeedViewController alloc] init];
     feedViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFeatured tag:0];
     feedViewController.tabBarItem.title = @"Feed";
+    feedViewController.title = @"Around You";
+    UINavigationController *feedNav = [[UINavigationController alloc] initWithRootViewController:feedViewController];
     
     SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
     addViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
     addViewController.tabBarItem.title = @"Add Deal";
+    addViewController.title = @"Add Deal";
+    UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addViewController];
     
     SAVHistoryViewController *historyViewController = [[SAVHistoryViewController alloc] init];
     historyViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:2];
     historyViewController.tabBarItem.title = @"Your Deals";
+    historyViewController.title = @"Your Deals";
+    UINavigationController *historyNav = [[UINavigationController alloc] initWithRootViewController:historyViewController];
     
-    self.viewControllers = [NSMutableArray arrayWithObjects:feedViewController, addViewController, historyViewController, nil];
+    self.viewControllers = [NSMutableArray arrayWithObjects:feedNav, addNav, historyNav, nil];
     
 }
 
