@@ -60,7 +60,7 @@
     SAVFeedTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SAVFeedTableViewCell" forIndexPath:indexPath];
     Deal *curDeal = self.dealList[indexPath.row];
     cell.dealLabel.text = curDeal.storeName;
-    cell.itemLabel.text = curDeal.itemName;
+    cell.itemLabel.text = curDeal.itemName.uppercaseString;
     cell.descriptionLabel.text = curDeal.description;
     NSInteger interval = (NSInteger)[curDeal.dealExpirationTime timeIntervalSinceNow];
     NSInteger seconds = interval % 60;
@@ -113,7 +113,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 132;
+    return 85;
 }
 
 -(void)_done{
