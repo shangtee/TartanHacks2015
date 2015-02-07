@@ -10,4 +10,6 @@
 
 @interface SAVFeedViewController : UITableViewController
 
+-(void)refreshTableView;
+
 @end

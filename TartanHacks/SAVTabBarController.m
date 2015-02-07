@@ -16,6 +16,9 @@
 
 @interface SAVTabBarController ()
 
+@property (nonatomic, strong) SAVAddViewController *addvc;
+@property (nonatomic, strong) SAVHistoryViewController *historyvc;
+
 @end
 
 @implementation SAVTabBarController
@@ -87,6 +90,8 @@
       NSFontAttributeName, nil]];
 
     self.viewControllers = [NSMutableArray arrayWithObjects:feedNav, addNav, historyNav, nil];
+    self.historyvc = historyViewController;
+    self.addvc = addViewController;
     
 }
 
@@ -95,6 +100,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)refresh {
+    [self.addvc refreshTableView];
+    [self.historyvc refreshTableView];
+}
 /*
 #pragma mark - Navigation
 
