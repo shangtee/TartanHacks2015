@@ -12,6 +12,7 @@
 
 @interface SAVAddViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *itemName;
+@property (nonatomic, strong) NSString *finalItemName;
 @property (weak, nonatomic) IBOutlet UIPickerView *saleType;
 @end
 
@@ -21,6 +22,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+}
+
+- (IBAction)textFieldDidEndOnExit:(id)sender
+{
+    self.finalItemName = ((UITextField *)sender).text;
+    PFObject *newDeal = [PFObject objectWithClassName:@"Deal"];
+    newDeal[@"itemName"] = self.finalItemName;
+    PFRelation *newRelation = [[PFUser currentUser] relationForKey:@"confirmedUsers"];
+    [newRelation addObject:[PFUser currentUser]];
+    newDeal[@"initiator"] = [PFUser currentUser];
+    [newDeal saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
