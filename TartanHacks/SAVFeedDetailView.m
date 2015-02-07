@@ -63,7 +63,7 @@
     }
     
     self.toClaimNumItems.text = [NSString stringWithFormat:@"%d", self.itemsSoFar];
-    self.totalPrice.text = [NSString stringWithFormat:@"$%.2d", (self.itemsSoFar * [self.curDeal.totalPrice intValue])];
+    self.totalPrice.text = [NSString stringWithFormat:@"$%.2f", self.itemsSoFar*[self.curDeal.totalPrice doubleValue]/[self.curDeal.numberOfItems doubleValue]];
 }
 
 - (IBAction)participate:(id)sender {

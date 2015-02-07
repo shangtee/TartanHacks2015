@@ -106,6 +106,9 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
+    [self.scrollView addGestureRecognizer:tap];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width*2, self.scrollView.frame.size.height);
     
     self.rightView.frame = CGRectMake(self.leftView.frame.size.width, 0, self.rightView.frame.size.width, self.rightView.frame.size.height);
@@ -128,6 +131,11 @@
     self.fromCamera = NO;
     [self.leftView addSubview:self.mapView];
 
+}
+
+-(void)tap
+{
+    [self.scrollView endEditing:YES];
 }
 
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate
