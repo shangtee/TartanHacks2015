@@ -11,6 +11,10 @@
 
 @interface SAVHistoryDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UILabel *selfItemsClaimed;
+@property (weak, nonatomic) IBOutlet UILabel *totalItemsClaimed;
+@property (weak, nonatomic) IBOutlet UILabel *numSelfItemsClaimed;
+@property (weak, nonatomic) IBOutlet UILabel *numTotalItemsClaimed;
 @property (strong, nonatomic) Deal *curDeal;
 @end
 
@@ -28,21 +32,32 @@
     self.storeLabel.text = self.curDeal.storeName;
     self.itemLabel.text = self.curDeal.itemName;
     self.descriptionLabel.text = self.curDeal.descript;
-    if (![(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId]) {
-        self.confirmButton.hidden = YES;
-        self.countLabel.hidden = YES;
-    } else {
-        self.confirmButton.hidden = NO;
+    PFFile *imageFile = self.curDeal.image;
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            self.imageView.image = [UIImage imageWithData:data];
+            // image can now be set on a UIImageView
+        }
+    }];
+    PFRelation *confirmedRelation = self.curDeal.confirmedUsers;
+    PFQuery *relationQuery = [confirmedRelation query];
+    [relationQuery whereKey:@"objectId" equalTo:[PFUser currentUser].objectId];
+    [relationQuery countObjectsInBackgroundWithBlock:^(int number, NSError *error) {
+        if (number > 0 || [PFUser currentUser].objectId == self.curDeal.initiator.objectId) {
+            self.confirmButton.hidden = YES;
+        } else {
+            self.confirmButton.hidden = NO;
+        }
         NSNumber *countNum = [(NSMutableDictionary *)([PFUser currentUser][@"dealNumDict"]) objectForKey:self.curDeal.objectId];
-        self.countLabel.text = countNum.description;
-
-    }
-    
+        self.numTotalItemsClaimed.text = [NSString stringWithFormat:@"%d/%d", ([self.curDeal.numberOfItems intValue] - [self.curDeal.numberOfItemsLeft intValue]), [self.curDeal.numberOfItems intValue]];
+        self.totalItemsClaimed.text = @"Total Claimed";
+        self.numSelfItemsClaimed.text = [NSString stringWithFormat:@"%d/%d", [countNum intValue], [self.curDeal.numberOfItems intValue]];
+        self.selfItemsClaimed.text = @"You Claimed";
+    }];
 }
 - (IBAction)confirmTouched:(UIButton *)sender {
     [[DataCenter sharedCenter] removeDeal:self.curDeal];
     sender.hidden = YES;
-    self.countLabel.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
