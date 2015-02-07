@@ -10,6 +10,4 @@
 
 @interface SAVAddViewController : UIViewController
 
--(void)refreshTableView;
-
 @end
