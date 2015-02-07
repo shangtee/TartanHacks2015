@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 
 @interface SAVAddViewController ()
+@property (nonatomic, strong) PFObject *deal;
 @property (weak, nonatomic) IBOutlet UIPickerView *itemName;
 @property (nonatomic, strong) NSString *finalItemName;
 @property (weak, nonatomic) IBOutlet UIPickerView *saleType;
@@ -21,18 +22,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
+    self.deal = [PFObject objectWithClassName:@"Deal"];
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender
 {
     self.finalItemName = ((UITextField *)sender).text;
-    PFObject *newDeal = [PFObject objectWithClassName:@"Deal"];
-    newDeal[@"itemName"] = self.finalItemName;
-    PFRelation *newRelation = [[PFUser currentUser] relationForKey:@"confirmedUsers"];
+    self.deal[@"itemName"] = self.finalItemName;
+}
+
+- (void)saveButtonTapped:(id)sender
+{
+    PFRelation *newRelation = [self.deal relationForKey:@"participants"];
     [newRelation addObject:[PFUser currentUser]];
-    newDeal[@"initiator"] = [PFUser currentUser];
-    [newDeal saveInBackground];
+    self.deal[@"initiator"] = [PFUser currentUser];
+    [self.deal saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
