@@ -6,7 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAVAddViewController">
             <connections>
+                <outlet property="buyNumItemsField" destination="fNG-xo-wGQ" id="ITR-Vn-56f"/>
+                <outlet property="datePicker" destination="gIP-FJ-5Bd" id="ljq-WG-l6f"/>
+                <outlet property="descriptionField" destination="iKL-5d-M2P" id="ycq-f7-OR6"/>
+                <outlet property="getNumItemsField" destination="ZXj-zp-aat" id="psV-Dk-tLP"/>
                 <outlet property="imageButton" destination="r4f-FZ-5kE" id="bhz-KS-HAs"/>
+                <outlet property="itemNameField" destination="ljE-tT-E4b" id="Gdd-KZ-ThY"/>
+                <outlet property="reservedItemsField" destination="MNc-SH-CQa" id="BdN-x2-f9h"/>
+                <outlet property="storeNameField" destination="pcx-Rt-TG3" id="nAO-P4-hxj"/>
                 <outlet property="view" destination="PSC-7e-sQN" id="FSg-hA-9qm"/>
             </connections>
         </placeholder>

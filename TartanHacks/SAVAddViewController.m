@@ -15,10 +15,14 @@
 
 @interface SAVAddViewController () <GMSMapViewDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate>
 @property (nonatomic, strong) PFObject *deal;
-@property (weak, nonatomic) IBOutlet UITextField *itemName;
-@property (nonatomic, strong) NSString *finalItemName;
-@property (weak, nonatomic) IBOutlet UIPickerView *saleType;
 @property (weak, nonatomic) IBOutlet UIButton *imageButton;
+@property (weak, nonatomic) IBOutlet UITextField *storeNameField;
+@property (weak, nonatomic) IBOutlet UITextField *itemNameField;
+@property (weak, nonatomic) IBOutlet UITextField *buyNumItemsField;
+@property (weak, nonatomic) IBOutlet UITextField *getNumItemsField;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UITextField *reservedItemsField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 @property (nonatomic, strong) UIImage *pickedImage;
 @property (nonatomic, strong) GMSMapView *mapView;
 @property (nonatomic, strong) GMSMarker *marker;
