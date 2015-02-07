@@ -12,7 +12,7 @@
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 @interface DataCenter () <CLLocationManagerDelegate>
-@property (strong, nonatomic) CLLocationManager *locationManager;
+//@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 @implementation DataCenter
 
@@ -62,4 +62,20 @@
     });
 
 }
+
+-(void)addDealParticipant:(Deal *)deal
+{
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        PFUser *user = [PFUser currentUser];
+        PFRelation *dealsRelation = [user relationForKey:@"dealsAsso"];
+        [dealsRelation addObject:user];
+        [user save];
+        PFRelation *participantsRelation = [deal relationForKey:@"participants"];
+        [participantsRelation addObject:deal];
+        [deal save];
+    });
+    
+}
+
 @end

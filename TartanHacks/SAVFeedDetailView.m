@@ -7,6 +7,7 @@
 //
 
 #import "SAVFeedDetailView.h"
+#import "DataCenter.h"
 
 @interface SAVFeedDetailView ()
 @property (strong, nonatomic) Deal *curDeal;
@@ -35,6 +36,7 @@
     [super viewDidLoad];
 }
 - (IBAction)participate:(id)sender {
+    [[DataCenter sharedCenter] addDealParticipant:self.curDeal];
 }
 
 @end

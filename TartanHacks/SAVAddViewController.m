@@ -7,8 +7,10 @@
 //
 
 #import "SAVAddViewController.h"
+#import "DataCenter.h"
 
 #import <Parse/Parse.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface SAVAddViewController ()
 @property (nonatomic, strong) PFObject *deal;
@@ -24,6 +26,13 @@
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
     self.deal = [PFObject objectWithClassName:@"Deal"];
+    
+    DataCenter *sharedCenter = [DataCenter sharedCenter];
+    [sharedCenter.locationManager startUpdatingLocation];
+    CLLocation *location = sharedCenter.locationManager.location;
+    
+    PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLocation:location];
+    self.deal[@"dealLocation"] = currentLoc;
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender
@@ -34,6 +43,7 @@
 
 - (void)saveButtonTapped:(id)sender
 {
+//    self.deal[@"itemName"] = ((UITextField *)self.itemName).text;
     PFRelation *newRelation = [self.deal relationForKey:@"participants"];
     [newRelation addObject:[PFUser currentUser]];
     self.deal[@"initiator"] = [PFUser currentUser];
