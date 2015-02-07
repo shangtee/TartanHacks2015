@@ -80,6 +80,11 @@
     [self.navigationController pushViewController:newDetailView animated:YES];
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
 -(void)_done{
     [self.navigationController popToViewController:self animated:YES];
 }
