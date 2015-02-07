@@ -12,7 +12,7 @@
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 @interface DataCenter () <CLLocationManagerDelegate>
-@property (strong, nonatomic) CLLocationManager *locationManager;
+//@property (strong, nonatomic) CLLocationManager *locationManager;
 @end
 @implementation DataCenter
 

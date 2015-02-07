@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol SAVMainDealDelegate;
 @protocol SAVHistoryDelegate;
 
 @interface DataCenter : NSObject
+@property (nonatomic, strong) CLLocationManager *locationManager;
+
 +(instancetype)sharedCenter;
 -(void) fetchDealsForUser: (id<SAVMainDealDelegate>) delegate;
 -(void) fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate;
