@@ -21,6 +21,7 @@
 -(void) fetchDealsOfUser: (id<SAVHistoryDelegate>) delegate;
 -(void) addDealParticipant: (Deal *)deal numItems: (NSInteger)num;
 -(void) updateRadius: (int)radius;
+-(void) removeDeal: (Deal *)deal;
 @end
 
 @protocol SAVMainDealDelegate <NSObject>
