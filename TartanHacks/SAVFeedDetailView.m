@@ -51,6 +51,7 @@
     [self.toClaimStepper addTarget:self action:@selector(addItem:) forControlEvents:UIControlEventValueChanged];
     self.toClaimStepper.value = 0.0;
     self.toClaimStepper.maximumValue = [self.curDeal.numberOfItemsLeft doubleValue];
+    self.totalPrice.text = @"$0.0";
 }
 
 - (void)addItem:(id)sender
@@ -62,6 +63,7 @@
     }
     
     self.toClaimNumItems.text = [NSString stringWithFormat:@"%d", self.itemsSoFar];
+    self.totalPrice.text = [NSString stringWithFormat:@"$%.2d", (self.itemsSoFar * [self.curDeal.totalPrice intValue])];
 }
 
 - (IBAction)participate:(id)sender {
