@@ -11,14 +11,8 @@
 #import <Parse/Parse.h>
 
 @interface SAVAddViewController ()
-@property (nonatomic, strong) UITextField *itemName;
-@property (nonatomic, strong) PFGeoPoint *location;
-@property (nonatomic, strong) UITextField *numberOfItems;
-@property (nonatomic, strong) UITextField *totalPrice;
-//@dynamic initiator;
-//@dynamic storeName;
-//@dynamic itemName;
-//@dynamic description;
+@property (weak, nonatomic) IBOutlet UIPickerView *itemName;
+@property (weak, nonatomic) IBOutlet UIPickerView *saleType;
 @end
 
 @implementation SAVAddViewController
@@ -26,11 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    self.itemName = [[UITextField alloc] initWithFrame:CGRectMake(10, 74, 100, 25)];
-    
     
 }
 
