@@ -444,6 +444,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/zli/Downloads/parse-library-1.6.2",
+					/Users/Sonya/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = TartanHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +460,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/zli/Downloads/parse-library-1.6.2",
+					/Users/Sonya/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = TartanHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
