@@ -32,7 +32,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *rightView;
-
+@property BOOL fromCamera;
 @property (weak, nonatomic) IBOutlet UIView *leftView;
 @end
 
@@ -69,6 +69,7 @@
 {
    
     [super viewWillAppear:animated];
+    if (self.fromCamera == YES) {self.fromCamera = NO; return; }
     self.deal = [PFObject objectWithClassName:@"Deal"];
     self.storeNameField.text = @"";
     self.itemNameField.text = @"";
@@ -121,9 +122,10 @@
     self.locationManager.delegate = self;
     
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:0.0 longitude:0.0 zoom:1.0];
-    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.leftView.frame.size.height - 410, self.leftView.frame.size.width, 300) camera:camera];
     
     self.mapView.delegate = self;
+    self.fromCamera = NO;
     [self.leftView addSubview:self.mapView];
 
 }
@@ -162,7 +164,7 @@
     self.deal[@"numberOfItems"] = [NSNumber numberWithInt:([self.buyNumItemsField.text intValue] + [self.getNumItemsField.text intValue])];
     self.deal[@"numberOfItemsLeft"] = [NSNumber numberWithInt:([self.buyNumItemsField.text intValue] + [self.getNumItemsField.text intValue] - [self.reservedItemsField.text intValue])];
     self.deal[@"totalPrice"] = [NSNumber numberWithDouble:[self.totalPrice.text doubleValue]];
-    
+    self.deal[@"dealExpirationTime"] = self.datePicker.date;
     if (self.pickedImage) {
         NSData *imageData = UIImagePNGRepresentation(self.pickedImage);
         PFFile *imageFile = [PFFile fileWithName:@"image" data:imageData];
@@ -193,6 +195,7 @@
     if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         NSLog(@"No camera, on simulator");
     } else {
+        self.fromCamera = YES;
         UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
         imagePickerController.delegate = self;
         imagePickerController.allowsEditing = YES;

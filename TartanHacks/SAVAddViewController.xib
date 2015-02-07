@@ -17,52 +17,44 @@
                 <outlet property="pricePerItem" destination="wJi-cd-bhd" id="Xoo-Hv-HJt"/>
                 <outlet property="reservedItemsField" destination="MNc-SH-CQa" id="BdN-x2-f9h"/>
                 <outlet property="rightView" destination="LTY-Zf-NzM" id="gCx-IK-rnb"/>
-                <outlet property="scrollView" destination="PSC-7e-sQN" id="n99-z5-ZgG"/>
+                <outlet property="scrollView" destination="vac-Bf-aq5" id="Lcz-sp-TYe"/>
                 <outlet property="storeNameField" destination="pcx-Rt-TG3" id="nAO-P4-hxj"/>
                 <outlet property="totalPrice" destination="gPy-WM-Wsx" id="rxZ-3L-BZv"/>
-                <outlet property="view" destination="PSC-7e-sQN" id="FSg-hA-9qm"/>
+                <outlet property="view" destination="vac-Bf-aq5" id="ZkY-Mw-2Le"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" placeholderIntrinsicWidth="828" placeholderIntrinsicHeight="736" id="PSC-7e-sQN" customClass="UIScrollView">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="800" id="vac-Bf-aq5">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTY-Zf-NzM">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="434" y="20" width="414" height="736"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-xo-wGQ">
-                            <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="250" y="506" width="65" height="30"/>
-                            </variation>
-                        </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-zp-aat">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="244" y="353" width="71" height="30"/>
+                                <rect key="frame" x="142" y="279" width="71" height="30"/>
                             </variation>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gua-VI-s2R">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="277" y="454" width="28" height="21"/>
+                                <rect key="frame" x="50" y="183" width="57" height="21"/>
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% off" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYW-Oq-de0">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="247" y="322" width="42" height="21"/>
+                                <rect key="frame" x="224" y="183" width="42" height="21"/>
                             </variation>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="40" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYz-0I-jIQ">
@@ -70,69 +62,60 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="90" y="270" width="51" height="30"/>
+                                <rect key="frame" x="282" y="181" width="51" height="30"/>
                             </variation>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price per item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ows-3Y-6JX">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original price/item:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ows-3Y-6JX">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="90" y="120" width="107" height="21"/>
+                                <rect key="frame" x="37" y="100" width="154" height="21"/>
                             </variation>
                         </label>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-cd-bhd">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$12" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wJi-cd-bhd">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="205" y="261" width="95" height="30"/>
+                                <rect key="frame" x="213" y="96" width="95" height="30"/>
                             </variation>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4c-Mb-fEB">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="38" y="340" width="100" height="21"/>
+                                <rect key="frame" x="147" y="330" width="100" height="21"/>
                             </variation>
                         </label>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-FJ-5Bd">
-                            <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                            <date key="date" timeIntervalSinceReferenceDate="445028476.75702298">
-                                <!--2015-02-07 19:01:16 +0000-->
-                            </date>
-                            <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="35" y="390" width="212" height="162"/>
-                            </variation>
-                        </datePicker>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpd-ys-lOP">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Our Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpd-ys-lOP">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="182" y="317" width="37" height="21"/>
+                                <rect key="frame" x="50" y="230" width="83" height="21"/>
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$30.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPy-WM-Wsx">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="199" y="184" width="53" height="21"/>
+                                <rect key="frame" x="151" y="230" width="53" height="21"/>
                             </variation>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You reserve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbx-4d-HRo">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I will buy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbx-4d-HRo">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="43" y="241" width="90" height="21"/>
+                                <rect key="frame" x="53" y="282" width="90" height="21"/>
                             </variation>
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="5" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MNc-SH-CQa">
@@ -140,23 +123,83 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="50" y="169" width="97" height="30"/>
+                                <rect key="frame" x="98" y="179" width="75" height="30"/>
                             </variation>
                         </textField>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-s9-oGO">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEED TO BUY:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-s9-oGO">
                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="37" y="58" width="125" height="21"/>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlU-vI-dLO">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="256" y="57" width="65" height="21"/>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="items" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gu9-od-cKL">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="237" y="282" width="42" height="21"/>
+                            </variation>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-gA-9BA">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="275" y="413" width="30" height="21"/>
+                                <rect key="frame" x="194" y="182" width="15" height="21"/>
                             </variation>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DEAL DETAILS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocT-Kk-aQy">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="144" y="17" width="115" height="21"/>
+                            </variation>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-xo-wGQ">
+                            <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="165" y="54" width="83" height="30"/>
+                            </variation>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dX2-gR-GHF">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="144" y="142" width="106" height="21"/>
+                            </variation>
+                        </label>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gIP-FJ-5Bd">
+                            <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                            <date key="date" timeIntervalSinceReferenceDate="445028476.75702298">
+                                <!--2015-02-07 19:01:16 +0000-->
+                            </date>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="91" y="369" width="212" height="162"/>
+                            </variation>
+                        </datePicker>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <variation key="default">
                         <mask key="subviews">
-                            <exclude reference="fNG-xo-wGQ"/>
                             <exclude reference="ZXj-zp-aat"/>
                             <exclude reference="gua-VI-s2R"/>
                             <exclude reference="HYW-Oq-de0"/>
@@ -164,18 +207,23 @@
                             <exclude reference="ows-3Y-6JX"/>
                             <exclude reference="wJi-cd-bhd"/>
                             <exclude reference="r4c-Mb-fEB"/>
-                            <exclude reference="gIP-FJ-5Bd"/>
                             <exclude reference="fpd-ys-lOP"/>
                             <exclude reference="gPy-WM-Wsx"/>
                             <exclude reference="Lbx-4d-HRo"/>
                             <exclude reference="MNc-SH-CQa"/>
                             <exclude reference="hCo-s9-oGO"/>
+                            <exclude reference="IlU-vI-dLO"/>
+                            <exclude reference="gu9-od-cKL"/>
+                            <exclude reference="dpR-gA-9BA"/>
+                            <exclude reference="ocT-Kk-aQy"/>
+                            <exclude reference="fNG-xo-wGQ"/>
+                            <exclude reference="dX2-gR-GHF"/>
+                            <exclude reference="gIP-FJ-5Bd"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular" fixedFrame="YES">
                         <rect key="frame" x="414" y="0.0" width="414" height="736"/>
                         <mask key="subviews">
-                            <include reference="fNG-xo-wGQ"/>
                             <include reference="ZXj-zp-aat"/>
                             <include reference="gua-VI-s2R"/>
                             <include reference="HYW-Oq-de0"/>
@@ -183,54 +231,84 @@
                             <include reference="ows-3Y-6JX"/>
                             <include reference="wJi-cd-bhd"/>
                             <include reference="r4c-Mb-fEB"/>
-                            <include reference="gIP-FJ-5Bd"/>
                             <include reference="fpd-ys-lOP"/>
                             <include reference="gPy-WM-Wsx"/>
                             <include reference="Lbx-4d-HRo"/>
                             <include reference="MNc-SH-CQa"/>
                             <include reference="hCo-s9-oGO"/>
+                            <include reference="IlU-vI-dLO"/>
+                            <include reference="gu9-od-cKL"/>
+                            <include reference="dpR-gA-9BA"/>
+                            <include reference="ocT-Kk-aQy"/>
+                            <include reference="fNG-xo-wGQ"/>
+                            <include reference="dX2-gR-GHF"/>
+                            <include reference="gIP-FJ-5Bd"/>
                         </mask>
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diT-nE-qG6">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="20" y="20" width="414" height="736"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Store Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcx-Rt-TG3">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What store are you at?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pcx-Rt-TG3">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="12" y="139" width="172" height="30"/>
+                                <rect key="frame" x="25" y="112" width="172" height="30"/>
                             </variation>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Item Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-tT-E4b">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="What item is on sale?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-tT-E4b">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="12" y="83" width="354" height="30"/>
+                                <rect key="frame" x="25" y="66" width="354" height="30"/>
                             </variation>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-5d-M2P">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="More details if you want!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKL-5d-M2P">
                             <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="12" y="204" width="176" height="30"/>
+                                <rect key="frame" x="25" y="159" width="176" height="30"/>
                             </variation>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4f-FZ-5kE">
                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                            <state key="normal" title="Take a Photo">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                            <state key="normal" title="Take a photo!">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <variation key="heightClass=regular" fixedFrame="YES">
-                                <rect key="frame" x="61" y="258" width="90" height="30"/>
+                                <rect key="frame" x="141" y="225" width="114" height="30"/>
                             </variation>
                             <connections>
                                 <action selector="addPhotoButtonTapped:" destination="-1" eventType="touchUpInside" id="oii-Dg-rSx"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rP-tK-4Sg">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="21" y="101" width="338" height="1"/>
+                            </variation>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uE-TB-LsN">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="21" y="150" width="338" height="1"/>
+                            </variation>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ANNOUNCE A GROUP DEAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUw-Gf-mKr">
+                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                            <variation key="heightClass=regular" fixedFrame="YES">
+                                <rect key="frame" x="53" y="16" width="295" height="21"/>
+                            </variation>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <variation key="default">
@@ -239,23 +317,25 @@
                             <exclude reference="ljE-tT-E4b"/>
                             <exclude reference="iKL-5d-M2P"/>
                             <exclude reference="r4f-FZ-5kE"/>
+                            <exclude reference="2rP-tK-4Sg"/>
+                            <exclude reference="0uE-TB-LsN"/>
+                            <exclude reference="VUw-Gf-mKr"/>
                         </mask>
                     </variation>
                     <variation key="heightClass=regular" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
                         <mask key="subviews">
                             <include reference="pcx-Rt-TG3"/>
                             <include reference="ljE-tT-E4b"/>
                             <include reference="iKL-5d-M2P"/>
                             <include reference="r4f-FZ-5kE"/>
+                            <include reference="2rP-tK-4Sg"/>
+                            <include reference="0uE-TB-LsN"/>
+                            <include reference="VUw-Gf-mKr"/>
                         </mask>
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="LTY-Zf-NzM"/>
@@ -268,7 +348,7 @@
                     <include reference="diT-nE-qG6"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="513.5" y="88"/>
-        </view>
+            <point key="canvasLocation" x="87.5" y="182"/>
+        </scrollView>
     </objects>
 </document>
