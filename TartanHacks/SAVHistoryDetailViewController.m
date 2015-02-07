@@ -7,13 +7,16 @@
 //
 
 #import "SAVHistoryDetailViewController.h"
-#import "Deal.h"
-@interface SAVHistoryDetailViewController ()
 
+@interface SAVHistoryDetailViewController ()
+@property (strong, nonatomic) Deal *curDeal;
 @end
 
 @implementation SAVHistoryDetailViewController
 - (id) initWithDeal:(Deal *)deal {
+    if (self) {
+        self.curDeal = deal;
+    }
     return self;
 }
 
