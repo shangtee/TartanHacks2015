@@ -10,6 +10,7 @@
 #import "SAVHistoryTableViewCell.h"
 #import "DataCenter.h"
 #import "Deal.h"
+#import "SAVHistoryDetailViewController.h"
 
 @interface SAVHistoryViewController ()<SAVMainDealDelegate>
 
@@ -47,9 +48,8 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,6 +73,16 @@
     return cell;
 }
 
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SAVHistoryDetailViewController *newDetailView = [[SAVHistoryDetailViewController alloc] initWithDeal:self.dealList[indexPath.row]];
+    UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(_done)];
+    self.navigationController.navigationItem.rightBarButtonItem = leftBarButtonItem;
+    [self.navigationController pushViewController:newDetailView animated:YES];
+}
+
+-(void)_done{
+    [self.navigationController popToViewController:self animated:YES];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
