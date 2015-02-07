@@ -63,13 +63,19 @@
 
 }
 
--(void)addDealParticipant:(Deal *)deal
+-(void)addDealParticipant:(Deal *)deal numItems: (NSInteger)num
 {
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         PFUser *user = [PFUser currentUser];
         PFRelation *dealsRelation = [user relationForKey:@"dealsAsso"];
         [dealsRelation addObject:user];
+        NSMutableDictionary *curDict = user[@"dealNumDict"];
+        if (curDict == nil){
+            curDict = [[NSMutableDictionary alloc] init];
+        }
+        [curDict setObject:[NSNumber numberWithInteger:num] forKey:deal.objectId];
+        user[@"dealNumDict"] = curDict;
         [user save];
         PFRelation *participantsRelation = [deal relationForKey:@"participants"];
         [participantsRelation addObject:deal];
