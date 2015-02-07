@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580A14351A85D4CE00259209 /* SAVFeedDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A14341A85D4CE00259209 /* SAVFeedDetailView.m */; };
+		580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 580A14361A85D62800259209 /* SAVFeedNib.xib */; };
 		583214351A85B29300CBBBA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */; };
 		583214361A85B29300CBBBA5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142B1A85B29300CBBBA5 /* CFNetwork.framework */; };
 		583214371A85B29300CBBBA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */; };
@@ -26,12 +28,21 @@
 		EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67D21A857FAB00156759 /* AppDelegate.m */; };
 		EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB0B67DA1A857FAB00156759 /* Images.xcassets */; };
 		EB0B67EA1A857FAC00156759 /* TartanHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB0B67E91A857FAC00156759 /* TartanHacksTests.m */; };
+		EB120B3F1A85CC3800A7318F /* SAVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB120B3D1A85CC3800A7318F /* SAVTabBarController.m */; };
+		EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB120B3E1A85CC3800A7318F /* SAVTabBarController.xib */; };
+		EB120B421A85DFFF00A7318F /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */; };
 		EB19EF851A85B74200AA7E24 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */; };
 		EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */; };
 		F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */; };
 		F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */; };
 		F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */; };
 		F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */; };
+		F5A4D21C1A85BEAB00FC353F /* SAVFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */; };
+		F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */; };
+		F5A4D2261A85D6CC00FC353F /* SAVHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */; };
+		F5A4D2271A85D6CC00FC353F /* SAVHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */; };
+		F5A4D22B1A85DB5300FC353F /* SAVHistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4D2291A85DB5300FC353F /* SAVHistoryDetailViewController.m */; };
+		F5A4D22C1A85DB5300FC353F /* SAVHistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5A4D22A1A85DB5300FC353F /* SAVHistoryDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580A14331A85D4CE00259209 /* SAVFeedDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedDetailView.h; sourceTree = "<group>"; };
+		580A14341A85D4CE00259209 /* SAVFeedDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedDetailView.m; sourceTree = "<group>"; };
+		580A14361A85D62800259209 /* SAVFeedNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedNib.xib; sourceTree = "<group>"; };
 		5832142A1A85B29300CBBBA5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5832142B1A85B29300CBBBA5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5832142C1A85B29300CBBBA5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,6 +85,10 @@
 		EB0B67E31A857FAC00156759 /* TartanHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TartanHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB0B67E81A857FAC00156759 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB0B67E91A857FAC00156759 /* TartanHacksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TartanHacksTests.m; sourceTree = "<group>"; };
+		EB120B3C1A85CC3800A7318F /* SAVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVTabBarController.h; sourceTree = "<group>"; };
+		EB120B3D1A85CC3800A7318F /* SAVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVTabBarController.m; sourceTree = "<group>"; };
+		EB120B3E1A85CC3800A7318F /* SAVTabBarController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVTabBarController.xib; sourceTree = "<group>"; };
+		EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		EB19EF861A85B8F800AA7E24 /* SAVLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVLoginViewController.h; sourceTree = "<group>"; };
 		EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVLoginViewController.m; sourceTree = "<group>"; };
@@ -81,6 +99,15 @@
 		F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVAddViewController.h; sourceTree = "<group>"; };
 		F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVAddViewController.m; sourceTree = "<group>"; };
 		F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVAddViewController.xib; sourceTree = "<group>"; };
+		F5A4D2191A85BEAB00FC353F /* SAVFeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVFeedTableViewCell.h; sourceTree = "<group>"; };
+		F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVFeedTableViewCell.m; sourceTree = "<group>"; };
+		F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVFeedTableViewCell.xib; sourceTree = "<group>"; };
+		F5A4D2231A85D6CC00FC353F /* SAVHistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVHistoryTableViewCell.h; sourceTree = "<group>"; };
+		F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVHistoryTableViewCell.m; sourceTree = "<group>"; };
+		F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		F5A4D2281A85DB5300FC353F /* SAVHistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVHistoryDetailViewController.h; sourceTree = "<group>"; };
+		F5A4D2291A85DB5300FC353F /* SAVHistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVHistoryDetailViewController.m; sourceTree = "<group>"; };
+		F5A4D22A1A85DB5300FC353F /* SAVHistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SAVHistoryDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +123,7 @@
 				583214491A85B3B000CBBBA5 /* Parse.framework in Frameworks */,
 				5832143A1A85B29300CBBBA5 /* libz.dylib in Frameworks */,
 				5832144B1A85B3C300CBBBA5 /* Bolts.framework in Frameworks */,
+				EB120B421A85DFFF00A7318F /* ParseFacebookUtils.framework in Frameworks */,
 				5832143B1A85B29300CBBBA5 /* MobileCoreServices.framework in Frameworks */,
 				5832143C1A85B29300CBBBA5 /* QuartzCore.framework in Frameworks */,
 				5832143D1A85B29300CBBBA5 /* Security.framework in Frameworks */,
@@ -118,6 +146,7 @@
 		583214251A85B20400CBBBA5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB120B411A85DFFF00A7318F /* ParseFacebookUtils.framework */,
 				EB19EF841A85B74200AA7E24 /* FacebookSDK.framework */,
 				5832144A1A85B3C300CBBBA5 /* Bolts.framework */,
 				583214481A85B3B000CBBBA5 /* Parse.framework */,
@@ -173,6 +202,9 @@
 				5832144F1A85B43B00CBBBA5 /* ParseData */,
 				EB0B67D11A857FAB00156759 /* AppDelegate.h */,
 				EB0B67D21A857FAB00156759 /* AppDelegate.m */,
+				EB120B3C1A85CC3800A7318F /* SAVTabBarController.h */,
+				EB120B3D1A85CC3800A7318F /* SAVTabBarController.m */,
+				EB120B3E1A85CC3800A7318F /* SAVTabBarController.xib */,
 				EB19EF861A85B8F800AA7E24 /* SAVLoginViewController.h */,
 				EB19EF871A85B8F800AA7E24 /* SAVLoginViewController.m */,
 				EB0B67DA1A857FAB00156759 /* Images.xcassets */,
@@ -210,13 +242,25 @@
 		F5A4D20D1A85BCE300FC353F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F5A4D2191A85BEAB00FC353F /* SAVFeedTableViewCell.h */,
+				F5A4D21A1A85BEAB00FC353F /* SAVFeedTableViewCell.m */,
+				F5A4D21B1A85BEAB00FC353F /* SAVFeedTableViewCell.xib */,
 				F5A4D20E1A85BCFE00FC353F /* SAVFeedViewController.h */,
 				F5A4D20F1A85BCFE00FC353F /* SAVFeedViewController.m */,
+				F5A4D2231A85D6CC00FC353F /* SAVHistoryTableViewCell.h */,
+				F5A4D2241A85D6CC00FC353F /* SAVHistoryTableViewCell.m */,
+				F5A4D2251A85D6CC00FC353F /* SAVHistoryTableViewCell.xib */,
 				F5A4D2111A85BD0D00FC353F /* SAVHistoryViewController.h */,
 				F5A4D2121A85BD0D00FC353F /* SAVHistoryViewController.m */,
+				F5A4D2281A85DB5300FC353F /* SAVHistoryDetailViewController.h */,
+				F5A4D2291A85DB5300FC353F /* SAVHistoryDetailViewController.m */,
+				F5A4D22A1A85DB5300FC353F /* SAVHistoryDetailViewController.xib */,
 				F5A4D2141A85BD1D00FC353F /* SAVAddViewController.h */,
 				F5A4D2151A85BD1D00FC353F /* SAVAddViewController.m */,
 				F5A4D2161A85BD1D00FC353F /* SAVAddViewController.xib */,
+				580A14331A85D4CE00259209 /* SAVFeedDetailView.h */,
+				580A14341A85D4CE00259209 /* SAVFeedDetailView.m */,
+				580A14361A85D62800259209 /* SAVFeedNib.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,8 +345,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A4D21D1A85BEAB00FC353F /* SAVFeedTableViewCell.xib in Resources */,
 				EB0B67DB1A857FAB00156759 /* Images.xcassets in Resources */,
+				EB120B401A85CC3800A7318F /* SAVTabBarController.xib in Resources */,
+				580A14371A85D62800259209 /* SAVFeedNib.xib in Resources */,
 				F5A4D2181A85BD1D00FC353F /* SAVAddViewController.xib in Resources */,
+				F5A4D2271A85D6CC00FC353F /* SAVHistoryTableViewCell.xib in Resources */,
+				F5A4D22C1A85DB5300FC353F /* SAVHistoryDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,12 +371,17 @@
 			files = (
 				F5A4D2131A85BD0D00FC353F /* SAVHistoryViewController.m in Sources */,
 				583214521A85B44F00CBBBA5 /* Deal.m in Sources */,
+				580A14351A85D4CE00259209 /* SAVFeedDetailView.m in Sources */,
 				5832144E1A85B43000CBBBA5 /* DataCenter.m in Sources */,
 				F5A4D2171A85BD1D00FC353F /* SAVAddViewController.m in Sources */,
+				EB120B3F1A85CC3800A7318F /* SAVTabBarController.m in Sources */,
+				F5A4D21C1A85BEAB00FC353F /* SAVFeedTableViewCell.m in Sources */,
 				EB0B67D31A857FAB00156759 /* AppDelegate.m in Sources */,
 				F5A4D2101A85BCFE00FC353F /* SAVFeedViewController.m in Sources */,
 				EB0B67D01A857FAB00156759 /* main.m in Sources */,
+				F5A4D22B1A85DB5300FC353F /* SAVHistoryDetailViewController.m in Sources */,
 				EB19EF881A85B8F800AA7E24 /* SAVLoginViewController.m in Sources */,
+				F5A4D2261A85D6CC00FC353F /* SAVHistoryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +488,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/zli/Downloads/parse-library-1.6.2",
+					/Users/Sonya/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = TartanHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -449,6 +504,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"/Users/zli/Downloads/parse-library-1.6.2",
+					/Users/Sonya/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = TartanHacks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

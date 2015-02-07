@@ -1,26 +1,28 @@
 //
-//  SAVAddViewController.m
+//  SAVHistoryDetailViewController.m
 //  TartanHacks
 //
-//  Created by Ruoxi Tan on 2/6/15.
+//  Created by Ruoxi Tan on 2/7/15.
 //  Copyright (c) 2015 SLZA. All rights reserved.
 //
 
-#import "SAVAddViewController.h"
+#import "SAVHistoryDetailViewController.h"
 
-@interface SAVAddViewController ()
-
+@interface SAVHistoryDetailViewController ()
+@property (strong, nonatomic) Deal *curDeal;
 @end
 
-@implementation SAVAddViewController
+@implementation SAVHistoryDetailViewController
+- (id) initWithDeal:(Deal *)deal {
+    if (self) {
+        self.curDeal = deal;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    self.view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

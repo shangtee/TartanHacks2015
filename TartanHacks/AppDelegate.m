@@ -9,10 +9,13 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
 #import "Deal.h"
 #import "SAVLoginViewController.h"
+#import "SAVTabBarController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <FBGraphUser>
 
 @end
 
@@ -23,6 +26,8 @@
     [Deal load];
     [Parse setApplicationId:@"exjRjDnCFX3h6c9ocZ5ZPFU5FHPDvIis0tKK4fhH"
                   clientKey:@"2QAsGJ0MnVb1iDMkfLjvZpm3OsMNdppJOa7DcmY8"];
+    [FBLoginView class];
+    [PFFacebookUtils initializeFacebook];
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);
@@ -33,9 +38,23 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    SAVLoginViewController *loginViewController = [[SAVLoginViewController alloc] init];
-    self.window.rootViewController = loginViewController;
+    
     [self.window makeKeyAndVisible];
+    
+    [PFFacebookUtils logInWithPermissions:nil block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+        } else if (user.isNew) {
+            NSLog(@"User signed up and logged in through Facebook!");
+            SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
+            self.window.rootViewController = tabBarController;
+        } else {
+            NSLog(@"User logged in through Facebook!");
+            SAVTabBarController *tabBarController = [[SAVTabBarController alloc] init];
+            self.window.rootViewController = tabBarController;
+        }
+    }];
+
     return YES;
 
 }
@@ -68,6 +87,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     [FBAppEvents activateApp];
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 
 }
 

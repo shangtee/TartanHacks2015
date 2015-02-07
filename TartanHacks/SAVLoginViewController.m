@@ -7,9 +7,11 @@
 //
 
 #import "SAVLoginViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
 
-@interface SAVLoginViewController ()
+#import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
+
+@interface SAVLoginViewController () <FBLoginViewDelegate>
 
 @end
 
@@ -18,9 +20,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     FBLoginView *loginView = [[FBLoginView alloc] init];
+    loginView.delegate = self;
     loginView.center = self.view.center;
     [self.view addSubview:loginView];
 
+}
+
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+{
+    NSString *username = user.username;
+    NSError *error;
+    [PFUser logInWithUsername:username password:username error:&error];
+    if (error) {
+        PFUser *newUser = [PFUser user];
+        newUser.username = username;
+        newUser.password = username;
+        NSError *signUpError;
+        [newUser signUp:&signUpError];
+        if (error) {
+            NSLog(@"Error while signing up for Parse");
+        }
+    }
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
