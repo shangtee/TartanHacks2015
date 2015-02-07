@@ -53,9 +53,9 @@
       NSFontAttributeName, nil]];
     
     SAVAddViewController *addViewController = [[SAVAddViewController alloc] init];
-    addViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemMore tag:1];
+    addViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"plus.gif"] selectedImage:[UIImage imageNamed:@"plus.gif"]];
     addViewController.tabBarItem.title = @"Add Deal";
-    addViewController.title = @"Add Deal";
+    addViewController.title = @"new";
     UINavigationController *addNav = [[UINavigationController alloc] initWithRootViewController:addViewController];
     addNav.navigationBar.barTintColor = seafoam;
     addNav.navigationBar.tintColor = [UIColor whiteColor];

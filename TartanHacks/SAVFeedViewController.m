@@ -33,7 +33,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     
-    self.radiusSlider = [[UISlider alloc] initWithFrame: CGRectMake(10, 10, self.view.frame.size.width - 100, 40)];
+    self.radiusSlider = [[UISlider alloc] initWithFrame: CGRectMake(10, 30, self.view.frame.size.width - 100, 40)];
     self.radiusSlider.value = [(NSNumber *)([PFUser currentUser][@"searchRadius"]) floatValue];
     self.radiusSlider.minimumValue = 0.0;
     self.radiusSlider.maximumValue = 10.0;
@@ -41,8 +41,9 @@
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 40, self.view.frame.size.width, 80)];
     [self.tableView.tableHeaderView addSubview:self.radiusSlider];
     
-    self.radiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width, 30)];
+    self.radiusLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width, 30)];
     self.radiusLabel.text = [NSString stringWithFormat:@"Search Radius: %d km", (int)self.radiusSlider.value];
+    self.radiusLabel.font = [UIFont fontWithName:@"Helvetica Light" size:15];
     [self.tableView.tableHeaderView addSubview:self.radiusLabel];
 
     [self.radiusSlider addTarget:self action:@selector(sliderValueConfirmed:) forControlEvents:UIControlEventValueChanged];
