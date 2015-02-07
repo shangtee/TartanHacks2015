@@ -13,11 +13,13 @@
 #import <CoreLocation/CoreLocation.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface SAVAddViewController ()
+@interface SAVAddViewController () <GMSMapViewDelegate>
 @property (nonatomic, strong) PFObject *deal;
 @property (weak, nonatomic) IBOutlet UITextField *itemName;
 @property (nonatomic, strong) NSString *finalItemName;
 @property (weak, nonatomic) IBOutlet UIPickerView *saleType;
+@property (nonatomic, strong) GMSMapView *mapView;
+@property (nonatomic, strong) GMSMarker *marker;
 @end
 
 @implementation SAVAddViewController
@@ -28,28 +30,29 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonTapped:)];
     self.deal = [PFObject objectWithClassName:@"Deal"];
     
-    DataCenter *sharedCenter = [DataCenter sharedCenter];
-    [sharedCenter.locationManager startUpdatingLocation];
-    CLLocation *location = sharedCenter.locationManager.location;
-    
-    PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLocation:location];
-    self.deal[@"dealLocation"] = currentLoc;
-    
+    DataCenter *dataCenter = [DataCenter sharedCenter];
+    CLLocation *location = dataCenter.locationManager.location;
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:location.coordinate.latitude
                                                             longitude:location.coordinate.longitude
                                                                  zoom:6];
-    GMSMapView *mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
-    mapView_.myLocationEnabled = YES;
+    self.mapView = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
+    self.mapView.myLocationEnabled = YES;
+    self.mapView.delegate = self;
     
     // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = mapView_.myLocation.coordinate;
-    marker.title = @"Sydney";
-    marker.snippet = @"Australia";
-    marker.map = mapView_;
+    self.marker = [[GMSMarker alloc] init];
+    self.marker.position = self.mapView.myLocation.coordinate;
+    self.marker.map = self.mapView;
     
-    [self.view addSubview:mapView_];
+    [self.view addSubview:self.mapView];
 
+}
+
+- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    [self.mapView animateToLocation:coordinate];
+    self.marker.position = coordinate;
+    self.marker.map = self.mapView;
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender
@@ -64,6 +67,9 @@
     PFRelation *newRelation = [self.deal relationForKey:@"participants"];
     [newRelation addObject:[PFUser currentUser]];
     self.deal[@"initiator"] = [PFUser currentUser];
+    PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLatitude:self.marker.position.latitude longitude:self.marker.position.longitude];
+    self.deal[@"dealLocation"] = currentLoc;
+    self.deal[@"active"] = @YES;
     [self.deal saveInBackground];
 }
 
