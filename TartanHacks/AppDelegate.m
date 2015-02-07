@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 #import "Deal.h"
 #import "SAVTabBarController.h"
@@ -26,6 +27,7 @@
                   clientKey:@"2QAsGJ0MnVb1iDMkfLjvZpm3OsMNdppJOa7DcmY8"];
     [FBLoginView class];
     [PFFacebookUtils initializeFacebook];
+    [GMSServices provideAPIKey:@"AIzaSyC3WwWmiK8IZxbobdxTuPBcZ93oLeRSnY4"];
     UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                     UIUserNotificationTypeBadge |
                                                     UIUserNotificationTypeSound);

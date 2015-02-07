@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SAVAddViewController">
             <connections>
+                <outlet property="itemName" destination="4qj-wT-HIA" id="R6p-AH-68h"/>
                 <outlet property="view" destination="PSC-7e-sQN" id="FSg-hA-9qm"/>
             </connections>
         </placeholder>

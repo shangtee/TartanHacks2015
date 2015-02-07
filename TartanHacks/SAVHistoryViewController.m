@@ -63,7 +63,7 @@
     Deal *curDeal = self.dealList[indexPath.row];
     cell.storeLabel.text = curDeal.storeName;
     cell.itemLabel.text = curDeal.itemName;
-    cell.descriptionLabel.text = curDeal.description;
+    cell.descriptionLabel.text = curDeal.descript;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeStyle = NSDateFormatterNoStyle;
     dateFormatter.dateStyle = NSDateFormatterShortStyle;

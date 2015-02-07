@@ -61,7 +61,7 @@
     Deal *curDeal = self.dealList[indexPath.row];
     cell.dealLabel.text = curDeal.storeName;
     cell.itemLabel.text = curDeal.itemName.uppercaseString;
-    cell.descriptionLabel.text = curDeal.description;
+    cell.descriptionLabel.text = curDeal.descript;
     NSInteger interval = (NSInteger)[curDeal.dealExpirationTime timeIntervalSinceNow];
     NSInteger seconds = interval % 60;
     NSInteger minutes = (interval / 60) % 60;

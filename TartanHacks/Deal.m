@@ -29,7 +29,7 @@
 @dynamic initiator;
 @dynamic storeName;
 @dynamic itemName;
-@dynamic description;
+@dynamic descript;
 
 
 

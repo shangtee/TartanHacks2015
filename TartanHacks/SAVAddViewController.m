@@ -11,10 +11,11 @@
 
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
+#import <GoogleMaps/GoogleMaps.h>
 
 @interface SAVAddViewController ()
 @property (nonatomic, strong) PFObject *deal;
-@property (weak, nonatomic) IBOutlet UIPickerView *itemName;
+@property (weak, nonatomic) IBOutlet UITextField *itemName;
 @property (nonatomic, strong) NSString *finalItemName;
 @property (weak, nonatomic) IBOutlet UIPickerView *saleType;
 @end
@@ -33,6 +34,22 @@
     
     PFGeoPoint *currentLoc = [PFGeoPoint geoPointWithLocation:location];
     self.deal[@"dealLocation"] = currentLoc;
+    
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:location.coordinate.latitude
+                                                            longitude:location.coordinate.longitude
+                                                                 zoom:6];
+    GMSMapView *mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, self.view.frame.size.height - 410, self.view.frame.size.width, 300) camera:camera];
+    mapView_.myLocationEnabled = YES;
+    
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = mapView_.myLocation.coordinate;
+    marker.title = @"Sydney";
+    marker.snippet = @"Australia";
+    marker.map = mapView_;
+    
+    [self.view addSubview:mapView_];
+
 }
 
 - (IBAction)textFieldDidEndOnExit:(id)sender
@@ -43,7 +60,7 @@
 
 - (void)saveButtonTapped:(id)sender
 {
-//    self.deal[@"itemName"] = ((UITextField *)self.itemName).text;
+    self.deal[@"itemName"] = self.itemName.text;
     PFRelation *newRelation = [self.deal relationForKey:@"participants"];
     [newRelation addObject:[PFUser currentUser]];
     self.deal[@"initiator"] = [PFUser currentUser];
